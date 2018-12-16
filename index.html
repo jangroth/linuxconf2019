@@ -26,6 +26,7 @@
 			<div class="slides">
 				<section>Python++</section>
 				<section>Intro</section>
+				<section>Python3 & venv</section>
 			</div>
 		</div>
 
@@ -33,11 +34,20 @@
 		<script src="js/reveal.js"></script>
 
 		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
-				dependencies: [
+  // presentation size
+  width: 1280,
+  height: 720,
+  margin: 0.1,
+  minScale: 0.2,
+  maxScale: 1.5,
+
+  // Parallax
+  //parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-2.jpg',
+  parallaxBackgroundImage: 'parallalax.jpg',
+  parallaxBackgroundSize: '2100px 900px', // CSS syntax, e.g. "2100px 900px"
+
+  dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },

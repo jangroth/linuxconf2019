@@ -54,7 +54,7 @@
         </section>
         <section data-markdown>
           <textarea data-template>
-           > Python 3.0 was released on December 3, 2008.It was designed to rectify **fundamental design flaws** in the language—the changes required could not be implemented while retaining full backwards compatibility with the 2.x series, which necessitated a new major version number. The guiding principle of Python 3 was: "reduce feature duplication by removing old ways of doing things". 
+           > Python 3.0 was released on December 3, 2008.It was designed to rectify **fundamental design flaws** in the language—the changes required could not be implemented while retaining full backwards compatibility with the 2.x series, which necessitated a new major version number. The guiding principle of Python 3 was: "reduce feature duplication by removing old ways of doing things".
 
            *From Wikipedia*
           </textarea>
@@ -77,6 +77,30 @@
            ## Scope & classes
           </textarea>
         </section>
+        <section data-transition="fade-out">
+        <pre><code data-trim data-noescape>
+        class SftpToS3():
+
+          <mark> def __init__(self, sftp_server, bucket_name): </mark>
+            self.sftp_client   = self._get_sftp_client(…)
+            self.target_bucket = boto3.Bucket(bucket_name)
+
+          def _get_sftp_client(self, value): 
+            return …
+        </code></pre>
+        </section>
+        <section data-transition="fade-out">
+        <pre><code data-trim data-noescape>
+        class SftpToS3():
+
+          def __init__(self, sftp_server, bucket_name):
+           <mark>  self.sftp_client   = self._get_sftp_client(…)</mark>
+            self.target_bucket = boto3.Bucket(bucket_name)
+
+          def _get_sftp_client(self, value): 
+            return …
+        </code></pre>
+        </section>
         <section data-markdown>
           <textarea data-template>
            > Write once. Read **many** times.
@@ -90,7 +114,7 @@
           <textarea data-template>
            > Here’s the plan: when someone uses a feature you don’t understand, simply shoot them. This is easier than learning something new, and before too long the only living coders will be writing in an easily understood, tiny subset of Python 0.9.6 <wink>
 
-           - *Tim Peters Legendary core developer and author of The Zen of Python*
+           - *Tim Peters, Legendary core developer and author of The Zen of Python*
           </textarea>
         </section>
       </section>
@@ -109,11 +133,11 @@
   minScale: 0.2,
   maxScale: 1.5,
 
-  // Parallax
-  //parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-2.jpg',
-  parallaxBackgroundImage: 'parallalax.jpg',
-  parallaxBackgroundSize: '2100px 900px', // CSS syntax, e.g. "2100px 900px"
+// Parallax
+//  parallaxBackgroundImage: 'parallalax.jpg'
+//  parallaxBackgroundSize: '2100px 900px', // CSS syntax, e.g. "2100px 900px"
 
+  history: true,
   dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },

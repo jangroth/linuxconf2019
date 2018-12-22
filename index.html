@@ -1,6 +1,15 @@
 <!doctype html>
 <html>
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131298185-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-131298185-1');
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -220,7 +229,7 @@
                         { src: 'reveal/plugin/notes/notes.js', async: true },
                         { src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
                         { src: 'reveal/plugin/symbol-per-slide-progress/symbol-per-slide-progress.js', async: true },
-                        { src: 'reveal/plugin/elapsed-time-bar/elapsed-time-bar.js'}
+                        { src: 'reveal/plugin/elapsed-time-bar/elapsed-time-bar.js'},
                     ]
         });
 </script>

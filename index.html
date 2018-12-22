@@ -32,6 +32,8 @@
 
 
 
+
+
     </script>
 </head>
 <body>
@@ -202,8 +204,14 @@
 <script src="talk/lib/js/head.min.js"></script>
 <script src="talk/js/reveal.js"></script>
 <script>
-
     Reveal.initialize({
+        symbolperslideprogress: {
+            position: "left", // left/right
+            align: "horizontal", // vertical/horizontal
+            symbolColor: "", // Colors like red/#ff0000/rgb(255, 0, 0)
+            symbolActiveColor: "",
+        },
+
         // presentation size
         width: 1280,
         height: 720,
@@ -215,15 +223,10 @@
         allottedTime: 25 * 60 * 1000, // 25 minutes
         progressBarHeight: 5,
 
-        symbolperslideprogress: {
-        position: "left", // left/right
-        align: "horizontal", // vertical/horizontal
-        symbolColor: "", // Colors like red/#ff0000/rgb(255, 0, 0)
-        symbolActiveColor: "",
-    },
-
+        // reveal
         history: true,
         progress: false,
+        hideAddressBar: true,
         dependencies: [
                         { src: 'talk/plugin/markdown/marked.js' },
                         { src: 'talk/plugin/elapsed-time-bar/elapsed-time-bar.js' },
@@ -234,8 +237,6 @@
                         { src: 'talk/plugin/elapsed-time-bar/elapsed-time-bar.js'}
                     ]
         });
-
-
 </script>
 </body>
 </html>

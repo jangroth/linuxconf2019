@@ -6,34 +6,19 @@
 
     <title>Python++</title>
 
-    <link rel="stylesheet" href="talk/css/reveal.css">
-    <link rel="stylesheet" href="talk/css/theme/black.css">
+    <link rel="stylesheet" href="reveal/css/reveal.css">
+    <link rel="stylesheet" href="reveal/css/theme/black.css">
 
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="talk/lib/css/zenburn.css">
+    <link rel="stylesheet" href="reveal/lib/css/zenburn.css">
 
     <!-- Printing and PDF exports -->
     <script>
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'talk/css/print/pdf.css' : 'talk/css/print/paper.css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </script>
 </head>
 <body>
@@ -201,8 +186,8 @@
     </div>
 </div>
 
-<script src="talk/lib/js/head.min.js"></script>
-<script src="talk/js/reveal.js"></script>
+<script src="reveal/lib/js/head.min.js"></script>
+<script src="reveal/js/reveal.js"></script>
 <script>
     Reveal.initialize({
         symbolperslideprogress: {
@@ -228,13 +213,13 @@
         progress: false,
         hideAddressBar: true,
         dependencies: [
-                        { src: 'talk/plugin/markdown/marked.js' },
-                        { src: 'talk/plugin/elapsed-time-bar/elapsed-time-bar.js' },
-                        { src: 'talk/plugin/markdown/markdown.js' },
-                        { src: 'talk/plugin/notes/notes.js', async: true },
-                        { src: 'talk/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-                        { src: 'talk/plugin/symbol-per-slide-progress/symbol-per-slide-progress.js', async: true },
-                        { src: 'talk/plugin/elapsed-time-bar/elapsed-time-bar.js'}
+                        { src: 'reveal/plugin/markdown/marked.js' },
+                        { src: 'reveal/plugin/elapsed-time-bar/elapsed-time-bar.js' },
+                        { src: 'reveal/plugin/markdown/markdown.js' },
+                        { src: 'reveal/plugin/notes/notes.js', async: true },
+                        { src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                        { src: 'reveal/plugin/symbol-per-slide-progress/symbol-per-slide-progress.js', async: true },
+                        { src: 'reveal/plugin/elapsed-time-bar/elapsed-time-bar.js'}
                     ]
         });
 </script>

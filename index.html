@@ -20,6 +20,16 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'talk/css/print/pdf.css' : 'talk/css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 
+
+
+
+
+
+
+
+
+
+
     </script>
 </head>
 <body>
@@ -190,22 +200,29 @@
 <script src="talk/lib/js/head.min.js"></script>
 <script src="talk/js/reveal.js"></script>
 <script>
-			Reveal.initialize({
-  // presentation size
-  width: 1280,
-  height: 720,
-  margin: 0.1,
-  minScale: 0.2,
-  maxScale: 1.5,
 
-  history: true,
-  dependencies: [
-					{ src: 'talk/plugin/markdown/marked.js' },
-					{ src: 'talk/plugin/markdown/markdown.js' },
-					{ src: 'talk/plugin/notes/notes.js', async: true },
-					{ src: 'talk/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
+    Reveal.initialize({
+        // presentation size
+        width: 1280,
+        height: 720,
+        margin: 0.1,
+        minScale: 0.2,
+        maxScale: 1.5,
+
+        // elapsed-time-bar
+        allottedTime: 25 * 60 * 1000, // 25 minutes
+        progressBarHeight: 5,
+
+        history: true,
+        dependencies: [
+                        { src: 'talk/plugin/markdown/marked.js' },
+                        { src: 'talk/plugin/elapsed-time-bar/elapsed-time-bar.js' },
+                        { src: 'talk/plugin/markdown/markdown.js' },
+                        { src: 'talk/plugin/notes/notes.js', async: true },
+                        { src: 'talk/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                        { src: 'talk/plugin/elapsed-time-bar/elapsed-time-bar.js'}
+                    ]
+        });
 
 </script>
 </body>

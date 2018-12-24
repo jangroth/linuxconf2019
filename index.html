@@ -10,6 +10,7 @@
 
       gtag('config', 'UA-131298185-1');
 
+
     </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -46,13 +47,13 @@
 
         <!-- Intro -->
         <section>
-           <section>
+            <section>
                 <h2>About me</h2>
                 <p>
-                    <ul>
-                        <li>DevOps Engineer at Versent* in Sydney**</li>
-                        <li>Developer Background</li>
-                    </ul>
+                <ul>
+                    <li>DevOps Engineer at Versent* in Sydney**</li>
+                    <li>Developer Background</li>
+                </ul>
                 </p>
                 <p>
                     <small>
@@ -64,11 +65,11 @@
             <section>
                 <h2>About this talk</h2>
                 <p>
-                    <ul>
-                        <li><strike>Here are 10 Python features, now start using them</strike></li>
-                        <li><strike>I'm a Python guru</strike></li>
-                        <li>Things that I found helpful when I switched to Python</li>
-                    </ul>
+                <ul>
+                    <li><strike>Here are 10 Python features, now start using them</strike></li>
+                    <li><strike>I'm a Python guru</strike></li>
+                    <li>Things that I found helpful when I switched to Python</li>
+                </ul>
                 </p>
             </section>
         </section>
@@ -85,16 +86,37 @@
             - TIP: use python3, use a tool to mamange dependencies
           </textarea>
             </section>
-            <section data-markdown>
-          <textarea data-teFmplate>
-            ## Quiz
-          </textarea>
+
+            <section>
+                <h2>Quiz</h2>
             </section>
-            <section data-markdown>
-          <textarea data-template>
-            > Python 3.0 was released on December 3, 2008.It was designed to rectify **fundamental design flaws** in the language—the changes required could not be implemented while retaining full backwards compatibility with the 2.x series, which necessitated a new major version number. The guiding principle of Python 3 was: "reduce feature duplication by removing old ways of doing things".
-            *From Wikipedia*
-          </textarea>
+            <section>
+                <h2>What year is this?</h2>
+                <ul>
+                    <li>Most popular movie: 'The Dark Knight'</li>
+                    <li>'Lehman Brothers' file for bankruptcy</li>
+                    <li>'Spotify' launches in Sweden</li>
+                    <li>Lady Gaga earned her first and second number-one single with 'Just Dance' and 'Poker Face'</li>
+                </ul>
+            </section>
+            <section>
+                <h2>2008</h2>
+            </section>
+            <section>
+                <blockquote>Python 3.0 was released on December 3, 2008.</blockquote>
+                <blockquote>It was designed to rectify fundamental design flaws in the language—the changes required could not be implemented while retaining full backwards compatibility with the 2.x series, which necessitated a new major version number.</blockquote>
+                <p>
+                    <small>
+                        Source: Wikipedia
+                    </small>
+                </p>
+            </section>
+            <section>
+                <p>Best reason to stop using Python 2.7 now:</p>
+                <iframe src="https://free.timeanddate.com/countdown/i6k6by43/n951/cf100/cm0/cu5/ct4/cs0/cacffffce/co0/cr0/ss0/cacfff/cpc000/pct/tcfff/fn3/fs250/szw576/szh243/iso2020-01-01T00:00:00/bas5/bacf00/pa10" allowTransparency="true" frameborder="0" width="605" height="272"></iframe>
+            </section>
+            <section>
+                <h2>Python versions & dependencies</h2>
             </section>
         </section>
 
@@ -217,12 +239,12 @@
 <script src="reveal/js/reveal.js"></script>
 <script>
     Reveal.initialize({
-        symbolperslideprogress: {
-            position: "left", // left/right
-            align: "horizontal", // vertical/horizontal
-            symbolColor: "", // Colors like red/#ff0000/rgb(255, 0, 0)
-            symbolActiveColor: "",
-        },
+        <!--symbolperslideprogress: {-->
+            <!--position: "left", // left/right-->
+            <!--align: "horizontal", // vertical/horizontal-->
+            <!--symbolColor: "", // Colors like red/#ff0000/rgb(255, 0, 0)-->
+            <!--symbolActiveColor: "",-->
+        <!--},-->
 
         // presentation size
         width: 1280,
@@ -237,7 +259,7 @@
 
         // reveal
         history: true,
-        progress: false,
+        progress: true,
         hideAddressBar: true,
         dependencies: [
                         { src: 'reveal/plugin/markdown/marked.js' },
@@ -245,7 +267,7 @@
                         { src: 'reveal/plugin/markdown/markdown.js' },
                         { src: 'reveal/plugin/notes/notes.js', async: true },
                         { src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-                        { src: 'reveal/plugin/symbol-per-slide-progress/symbol-per-slide-progress.js', async: true },
+                        <!--{ src: 'reveal/plugin/symbol-per-slide-progress/symbol-per-slide-progress.js', async: true },-->
                         { src: 'reveal/plugin/elapsed-time-bar/elapsed-time-bar.js'},
                     ]
         });

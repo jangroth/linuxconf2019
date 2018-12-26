@@ -9,7 +9,6 @@
       gtag('js', new Date());
 
       gtag('config', 'UA-131298185-1');
-
     </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -17,7 +16,7 @@
     <title>Python++</title>
 
     <link rel="stylesheet" href="reveal/css/reveal.css">
-    <link rel="stylesheet" href="reveal/css/theme/black.css">
+    <link rel="stylesheet" href="reveal/css/theme/black.css" id="theme">
     <link rel="stylesheet" href="reveal/css/custom.css">
 
     <!-- Theme used for syntax highlighting of code -->
@@ -30,7 +29,6 @@
 			link.type = 'text/css';
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
-
     </script>
 </head>
 <body>
@@ -77,17 +75,6 @@
 
         <!-- Python3 & venv -->
         <section>
-            <section data-markdown>
-          <textarea data-template>
-            ## Python3 & venv
-            - quiz
-            - Python 3 quote
-            - versions & dependencies as a problem/challenge
-            - solution: venv - pyenv - docker
-            - TIP: use python3, use a tool to mamange dependencies
-          </textarea>
-            </section>
-
             <section>
                 <h2>Quiz</h2>
             </section>
@@ -158,8 +145,9 @@
                     </pre>
                 </div>
             </section>
-            <section>
-                <h2>Staying ahead of Python's versions</h2>
+            <section data-background="#f7f2d3">
+                <h2>Tip #1</h2>
+                <p>Stay ahead of Python's versions</p>
                 <ul>
                     <li>Use Python 3</li>
                     <li>Use a tool to manage dependencies</li>
@@ -169,12 +157,11 @@
                         <li>docker & venv</li>
                     </ul>
                 </ul>
-
             </section>
         </section>
 
         <!-- Conventions  & good naming -->
-        <section>
+        <section data-state="changeToBlack">
             <section data-markdown>
           <textarea data-template>
             ## Conventions & Good naming 'Write beautiful code'
@@ -325,7 +312,6 @@
                         { src: 'reveal/plugin/badges/badges.js'}
                     ]
         });
-
 </script>
 </body>
 </html>

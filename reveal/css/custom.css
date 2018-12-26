@@ -14,3 +14,9 @@
   z-index:-10;
   width:50%;
 }
+
+/* debug only
+body {
+  background-image: url("background_720.png")
+}
+*/

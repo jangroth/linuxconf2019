@@ -10,7 +10,6 @@
 
       gtag('config', 'UA-131298185-1');
 
-
     </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -19,6 +18,7 @@
 
     <link rel="stylesheet" href="reveal/css/reveal.css">
     <link rel="stylesheet" href="reveal/css/theme/black.css">
+    <link rel="stylesheet" href="reveal/css/custom.css">
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="reveal/lib/css/zenburn.css">
@@ -30,6 +30,7 @@
 			link.type = 'text/css';
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
     </script>
 </head>
 <body>
@@ -117,6 +118,58 @@
             </section>
             <section>
                 <h2>Python versions & dependencies</h2>
+                <ul>
+                    <li>Python environment <strong>per project</strong></li>
+                    <ul>
+                        <strong>Don't</strong> use the system environment
+                    </ul>
+                    <li>Dependencies as <strong>unspecific as possible</strong></li>
+                    <ul>
+                        <li>Only direct dependencies</li>
+                        <li>Version numbers only when required</li>
+                    </ul>
+                </ul>
+            </section>
+            <section>
+                <h2>requirements.txt</h2>
+                <br/>
+                <br/>
+                <div class="left">
+                    <pre data-badge="don't" data-badge-fg="red">
+                        <code data-trim data-noescape>
+                            boto3==1.9.71
+                            botocore==1.12.71
+                            docutils==0.14
+                            jmespath==0.9.3
+                            python-dateutil==2.7.5
+                            PyYAML==3.13
+                            s3transfer==0.1.13
+                            six==1.12.0
+                            urllib3==1.24.1
+                        </code>
+                    </pre>
+                </div>
+                <div class="right">
+                    <pre data-badge="instead" data-badge-fg="green">
+                        <code data-trim data-noescape>
+                            boto3
+                            PyYAML
+                        </code>
+                    </pre>
+                </div>
+            </section>
+            <section>
+                <h2>Staying ahead of Python's versions</h2>
+                <ul>
+                    <li>Use Python 3</li>
+                    <li>Use a tool to manage dependencies</li>
+                    <ul>
+                        <li>venv</li>
+                        <li>pipenv</li>
+                        <li>docker & venv</li>
+                    </ul>
+                </ul>
+
             </section>
         </section>
 
@@ -269,8 +322,10 @@
                         { src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
                         <!--{ src: 'reveal/plugin/symbol-per-slide-progress/symbol-per-slide-progress.js', async: true },-->
                         { src: 'reveal/plugin/elapsed-time-bar/elapsed-time-bar.js'},
+                        { src: 'reveal/plugin/badges/badges.js'}
                     ]
         });
+
 </script>
 </body>
 </html>

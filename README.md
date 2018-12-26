@@ -19,6 +19,9 @@ Presentation for Sysadmin miniconf at linux.conf.au 2019
 
 I'm using [reveal.js](https://github.com/hakimel/reveal.js) with these plugins:
 * [Elapsed-Time-Bar](https://github.com/tkrkt/reveal.js-elapsed-time-bar) 
-* [Symbol-Per-Slide-Progress](https://github.com/naamor/reveal.js-symbol-per-slide-progress) 
- 
+* [Symbol-Per-Slide-Progress](https://github.com/naamor/reveal.js-symbol-per-slide-progress)
+  
 It's beautiful.
+
+Also using:
+* [timeanddate.com](https://www.timeanddate.com/clocks/freecountdown.html)

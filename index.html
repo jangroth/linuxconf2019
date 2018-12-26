@@ -9,6 +9,7 @@
         gtag('js', new Date());
 
         gtag('config', 'UA-131298185-1');
+
     </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -27,6 +28,7 @@
         link.type = 'text/css';
         link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
+
     </script>
 </head>
 <body>
@@ -79,10 +81,10 @@
             <section>
                 <h2>What year is this?</h2>
                 <ul>
-                    <li>Most popular movie: 'The Dark Knight'</li>
-                    <li>'Lehman Brothers' file for bankruptcy</li>
-                    <li>'Spotify' launches in Sweden</li>
-                    <li>Lady Gaga earned her first and second number-one single with 'Just Dance' and 'Poker Face'</li>
+                    <li class="fragment">Most popular movie: 'The Dark Knight'</li>
+                    <li class="fragment">'Lehman Brothers' file for bankruptcy</li>
+                    <li class="fragment">'Spotify' launches in Sweden</li>
+                    <li class="fragment">Lady Gaga has two number-one singles with 'Just Dance' and 'Poker Face'</li>
                 </ul>
             </section>
             <section>
@@ -160,18 +162,73 @@
 
         <!-- Conventions  & good naming -->
         <section data-state="changeToBlack">
-            <section data-markdown>
-          <textarea data-template>
-            ## Conventions & Good naming 'Write beautiful code'
-            - touchtyping to coding conventions
-            - example: method, constant, variable, class(?)
-            - make an effort to find good names. Use verbs
-            - example: refactor method name, get rid of doc string
-            - TIP: follow conventions and make an effort to find good names
-          </textarea>
+0            <section>
+                <p>What is it that makes touch-typing useful?</p>
             </section>
             <section>
-                Write once, read many times.
+                <pre>
+                    <code data-trim data-noescape>
+                        CONSTANTS_IN_UPPERCASE = 123
+
+                        variables_are_lowercase = 'OH YES!'
+
+
+                        def methods_are_lowercase_too():
+                            pass
+
+
+                        def all_use_kebap_case():
+                            pass
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <p>Write once, read many times.</p>
+                <p class="fragment">It's always worthwhile to spend an extra second to find good names</p>
+            </section>
+            <section>
+                <pre>
+                    <code data-trim data-noescape>
+                        # uses supplied credentials to create new sftp client
+                        def sftp_client(username, password):
+                            pass
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <pre>
+                    <code data-trim data-noescape>
+                        def sftp_client(username, password):
+                            """
+                            This method uses the supplied credentials to create a new sftp client.
+                            """
+                            pass
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <pre>
+                    <code data-trim data-noescape>
+                        def create_sftp_client(username, password):
+                            """
+                            This method uses the supplied credentials to create a new sftp client.
+                            """
+                            pass
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <pre>
+                    <code data-trim data-noescape>
+                        def create_sftp_client(username, password):
+                            pass
+                    </code>
+                </pre>
+            </section>
+            <section data-background="#f7f2d3">
+                <h2>Tip #2</h2>
+                <p>Use language conventions.</p>
+                <p>Make an effort to find good names.</p>
             </section>
         </section>
 
@@ -184,6 +241,9 @@
             - don't overcomment
             - TIP: 
           </textarea>
+            </section>
+            <section>
+                Write once, read many times.
             </section>
             <section>
                 There is beauty in simplicity
@@ -310,6 +370,7 @@
                         { src: 'reveal/plugin/badges/badges.js'}
                     ]
         });
+
 </script>
 </body>
 </html>

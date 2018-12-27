@@ -78,9 +78,6 @@
         <!-- Python3 & venv -->
         <section>
             <section>
-                <h2>Quiz</h2>
-            </section>
-            <section>
                 <h2>What year is this?</h2>
                 <ul>
                     <li class="fragment">Most popular movie: 'The Dark Knight'</li>
@@ -302,6 +299,28 @@
                     </code>
                 </pre>
             </section>
+
+            <section>
+                <div class="left">
+                    <pre data-badge="don't" data-badge-fg="red">
+                        <code data-trim data-noescape>
+                        symbols = '$¢£¥€¤'
+                        codes = []
+                        for symbol in symbols:
+                            codes.append(ord(symbol))
+                        </code>
+                    </pre>
+                </div>
+                <div class="right">
+                    <pre data-badge="instead" data-badge-fg="green">
+                        <code data-trim data-noescape>
+                            symbols = '$¢£¥€¤'
+                            codes = [ord(symbol) for symbol in symbols]
+                        </code>
+                    </pre>
+                </div>
+            </section>
+
             <section>
                 Commenting every single line can be a good thing...
             </section>

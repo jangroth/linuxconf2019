@@ -10,6 +10,7 @@
 
         gtag('config', 'UA-131298185-1');
 
+
     </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -29,13 +30,14 @@
         link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
 
+
     </script>
 </head>
 <body>
 <div class="reveal">
     <div class="slides">
 
-<!-- Title -->
+        <!-- Title -->
         <section>
             <h1>Python++</h1>
             <p><i>linux.conf.au 2019</i></p>
@@ -44,7 +46,7 @@
             </p>
         </section>
 
-<!-- Intro -->
+        <!-- Intro -->
         <section>
             <section>
                 <h2>About me</h2>
@@ -73,7 +75,7 @@
             </section>
         </section>
 
-<!-- Python3 & venv -->
+        <!-- Python3 & venv -->
         <section>
             <section>
                 <h2>Quiz</h2>
@@ -160,7 +162,7 @@
             </section>
         </section>
 
-<!-- Conventions  & good naming -->
+        <!-- Conventions  & good naming -->
         <section data-state="changeToBlack">
             <section>
                 <p>What is it that makes touch-typing useful?</p>
@@ -252,7 +254,7 @@
             </section>
         </section>
 
-<!-- Beauty lies in simplicity -->
+        <!-- Beauty lies in simplicity -->
         <section>
             <section>
                 There is beauty in simplicity.
@@ -276,6 +278,29 @@
                         </code>
                     </pre>
                 </div>
+            </section>
+            <section>
+                Often, there is a 'pythonic' way
+            </section>
+            <section>
+                <p>Using a loop to create a list</p>
+                <pre>
+                    <code data-trim data-noescape>
+                        symbols = '$¢£¥€¤'
+                        codes = []
+                        for symbol in symbols:
+                            codes.append(ord(symbol))
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <p>The same, using list comprehension</p>
+                <pre>
+                    <code data-trim data-noescape>
+                        symbols = '$¢£¥€¤'
+                        codes = [ord(symbol) for symbol in symbols]
+                    </code>
+                </pre>
             </section>
             <section>
                 Commenting every single line can be a good thing...
@@ -322,8 +347,8 @@
                             # Convert String to Byte Array
                             res = arg.encode()
                             # Hash through 10000 times.
-                            for lp in range(1000001):
-                                # Always setup hashlib because [...]
+                            for lp in range(10000):
+                                # Always initialize hashlib, because [...]
                                 m = hashlib.sha256()
                                 # Swap between the two inputs into the digest based on loop number
                                 m.update(res) if lp % 2 else m.update(salt)
@@ -342,8 +367,8 @@
                             <strike class="strike"># Convert String to Byte Array</strike>
                             res = arg.encode()
                             <strike class="strike"># Hash through 10000 times.</strike>
-                            for lp in range(1000001):
-                                # Always setup hashlib because [...]
+                            for lp in range(10000):
+                                <mark># Always initialize hashlib, because [...]</mark>
                                 m = hashlib.sha256()
                                 <strike class="strike"># Swap between the two inputs into the digest based on loop number</strike>
                                 m.update(res) if lp % 2 else m.update(salt)
@@ -355,7 +380,8 @@
             </section>
             <section data-background="#f7f2d3">
                 <h2>Tip #3</h2>
-                <p>Try to write simple, but functional code.</p>
+                <p>Try to write code that is both, functional <strong>and</strong> simple.</p>
+                <p>Use Python idioms where you can.</p>
                 <p>Comment only what you cannot say in code.</p>
             </section>
         </section>
@@ -480,6 +506,7 @@
                         { src: 'reveal/plugin/badges/badges.js'}
                     ]
         });
+
 
 </script>
 </body>

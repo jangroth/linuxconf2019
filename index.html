@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="reveal/css/reveal.css">
     <link rel="stylesheet" href="reveal/css/theme/black.css" id="theme">
     <link rel="stylesheet" href="reveal/css/custom.css">
-    <link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+    <link rel="stylesheet" href="reveal/lib/css/solarized-dark.css">
 
     <!-- Printing and PDF exports -->
     <script>
@@ -122,7 +122,7 @@
                 <br/>
                 <div class="left">
                     <pre data-badge="don't" data-badge-fg="red">
-                        <code data-trim data-noescape>
+                        <code class="plaintext" data-trim data-noescape>
                             boto3==1.9.71
                             botocore==1.12.71
                             docutils==0.14
@@ -137,7 +137,7 @@
                 </div>
                 <div class="right">
                     <pre data-badge="instead" data-badge-fg="green">
-                        <code data-trim data-noescape>
+                        <code class="plaintext" data-trim data-noescape>
                             boto3
                             PyYAML
                         </code>
@@ -162,11 +162,11 @@
         <!-- Conventions  & good naming -->
         <section data-state="changeToBlack">
             <section>
-                <p>What is it that makes touch-typing useful?</p>
+                <p>Why is touch-typing useful?</p>
             </section>
             <section>
                 <pre>
-                    <code data-trim data-noescape>
+                    <code class="python" data-trim data-noescape>
                         CONSTANTS_IN_UPPERCASE = 123
 
                         variables_are_lowercase = 'OH YES!'
@@ -183,11 +183,11 @@
             </section>
             <section>
                 <p>Write once, read many times.</p>
-                <p class="fragment">Let's talk about naming things</p>
+                <p class="fragment">Let's talk about naming things...</p>
             </section>
             <section>
                 <pre>
-                    <code data-trim data-noescape>
+                    <code class="python" data-trim data-noescape>
                         # uses supplied credentials to create new sftp client
                         def sftp_client(username, password):
                             pass
@@ -196,7 +196,7 @@
             </section>
             <section>
                 <pre>
-                    <code data-trim data-noescape>
+                    <code class="python" data-trim data-noescape>
                         def sftp_client(username, password):
                             """
                             This method uses the supplied credentials to create a new sftp client.
@@ -207,7 +207,7 @@
             </section>
             <section>
                 <pre>
-                    <code data-trim data-noescape>
+                    <code class="python" data-trim data-noescape>
                         def create_sftp_client(username, password):
                             """
                             This method uses the supplied credentials to create a new sftp client.
@@ -218,31 +218,26 @@
             </section>
             <section>
                 <pre>
-                    <code data-trim data-noescape>
+                    <code class="python" data-trim data-noescape>
                         def create_sftp_client(username, password):
                             pass
                     </code>
                 </pre>
             </section>
             <section>
-                <div class="left">
-                    <pre data-badge="don't" data-badge-fg="red">
-                        <code data-trim data-noescape>
-                            # uses supplied credentials to
-                            # create new sftp client
-                            def sftp_client(username, password):
-                                pass
-                        </code>
-                    </pre>
-                </div>
-                <div class="right">
-                    <pre data-badge="instead" data-badge-fg="green">
-                        <code data-trim data-noescape>
-                            def create_sftp_client(username, password):
-                                pass
-                        </code>
-                    </pre>
-                </div>
+                <pre data-badge="don't" data-badge-fg="red">
+                    <code class="python" data-trim data-noescape>
+                        # uses supplied credentials to create new sftp client
+                        def sftp_client(username, password):
+                            pass
+                    </code>
+                </pre>
+                <pre data-badge="instead" data-badge-fg="green">
+                    <code class="python" data-trim data-noescape>
+                        def create_sftp_client(username, password):
+                            pass
+                    </code>
+                </pre>
             </section>
             <section data-background="#f7f2d3">
                 <h2>Tip #2</h2>
@@ -259,7 +254,7 @@
             <section>
                 <div class="left">
                     <pre data-badge="don't" data-badge-fg="red">
-                        <code data-trim data-noescape>
+                        <code class="python" data-trim data-noescape>
                             counter = 0
                             while counter < 5:
                                 print(counter)
@@ -269,7 +264,7 @@
                 </div>
                 <div class="right">
                     <pre data-badge="instead" data-badge-fg="green">
-                        <code data-trim data-noescape>
+                        <code class="python" data-trim data-noescape>
                             for i in range(5):
                                 print(i)
                         </code>
@@ -282,43 +277,40 @@
             <section>
                 <p>Using a loop to create a list</p>
                 <pre>
-                    <code data-trim data-noescape>
+                    <code class="python" data-trim data-noescape>
                         symbols = '$¢£¥€¤'
+
                         codes = []
                         for symbol in symbols:
                             codes.append(ord(symbol))
+
+                        >>> [36, 162, 163, 165, 8364, 164]
                     </code>
                 </pre>
             </section>
             <section>
                 <p>The same, using list comprehension</p>
                 <pre>
-                    <code data-trim data-noescape>
-                        symbols = '$¢£¥€¤'
+                    <code class="python" data-trim data-noescape>
                         codes = [ord(symbol) for symbol in symbols]
                     </code>
                 </pre>
             </section>
-
             <section>
-                <div class="left">
                     <pre data-badge="don't" data-badge-fg="red">
-                        <code data-trim data-noescape>
+                        <code class="python" data-trim data-noescape>
                         symbols = '$¢£¥€¤'
                         codes = []
                         for symbol in symbols:
                             codes.append(ord(symbol))
                         </code>
                     </pre>
-                </div>
-                <div class="right">
                     <pre data-badge="instead" data-badge-fg="green">
-                        <code data-trim data-noescape>
+                        <code class="python" data-trim data-noescape>
                             symbols = '$¢£¥€¤'
                             codes = [ord(symbol) for symbol in symbols]
                         </code>
                     </pre>
-                </div>
             </section>
 
             <section>
@@ -326,7 +318,7 @@
             </section>
             <section data-transition="fade-in">
                 <pre>
-                    <code data-trim data-noescape>
+                    <code class="assembler" data-trim data-noescape>
                         clear:
 
                               mov       ah,15
@@ -342,15 +334,15 @@
             <section data-transition="fade-in">
                 <pre>
                     <code data-trim data-noescape>
-                        clear:                      ;initialize display...
-                                                    ;call BIOS video driver to
-                              mov       ah,15       ;get current display mode:
-                              int       10h         ;returns AL = mode, and
-                                                    ;AH = no. of columns.
-                              cmp       al,7        ;if we are in graphics modes
-                              je        clear0      ;(modes 4,5,6) then exit
-                              cmp       al,3        ;but if we are in mode 0-3
-                              ja        clear9      ;or 7 then continue.
+                        clear:                      ; initialize display...
+                                                    ; call BIOS video driver to
+                              mov       ah,15       ; get current display mode:
+                              int       10h         ; returns AL = mode, and
+                                                    ; AH = no. of columns.
+                              cmp       al,7        ; if we are in graphics modes
+                              je        clear0      ; (modes 4,5,6) then exit
+                              cmp       al,3        ; but if we are in mode 0-3
+                              ja        clear9      ; or 7 then continue.
                     </code>
                 </pre>
             </section>

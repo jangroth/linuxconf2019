@@ -35,7 +35,7 @@
 <div class="reveal">
     <div class="slides">
 
-        <!-- Title -->
+<!-- Title -->
         <section>
             <h1>Python++</h1>
             <p><i>linux.conf.au 2019</i></p>
@@ -44,7 +44,7 @@
             </p>
         </section>
 
-        <!-- Intro -->
+<!-- Intro -->
         <section>
             <section>
                 <h2>About me</h2>
@@ -64,16 +64,16 @@
             <section>
                 <h2>About this talk</h2>
                 <p>
-                <ul>
-                    <li><strike>Here are 10 Python features, now start using them</strike></li>
-                    <li><strike>I'm a Python guru</strike></li>
-                    <li>Things that I found helpful when I switched to Python</li>
+                <ul class="fragment">
+                    <li class="fragment strike">Here are 10 Python features, now start using them</li>
+                    <li class="fragment">I'm not a Python guru</li>
+                    <li class="fragment">Things that I found helpful when I switched to Python</li>
                 </ul>
                 </p>
             </section>
         </section>
 
-        <!-- Python3 & venv -->
+<!-- Python3 & venv -->
         <section>
             <section>
                 <h2>Quiz</h2>
@@ -160,9 +160,9 @@
             </section>
         </section>
 
-        <!-- Conventions  & good naming -->
+<!-- Conventions  & good naming -->
         <section data-state="changeToBlack">
-0            <section>
+            <section>
                 <p>What is it that makes touch-typing useful?</p>
             </section>
             <section>
@@ -184,7 +184,7 @@
             </section>
             <section>
                 <p>Write once, read many times.</p>
-                <p class="fragment">It's always worthwhile to spend an extra second to find good names</p>
+                <p class="fragment">Let's talk about naming things</p>
             </section>
             <section>
                 <pre>
@@ -225,6 +225,26 @@
                     </code>
                 </pre>
             </section>
+            <section>
+                <div class="left">
+                    <pre data-badge="don't" data-badge-fg="red">
+                        <code data-trim data-noescape>
+                            # uses supplied credentials to
+                            # create new sftp client
+                            def sftp_client(username, password):
+                                pass
+                        </code>
+                    </pre>
+                </div>
+                <div class="right">
+                    <pre data-badge="instead" data-badge-fg="green">
+                        <code data-trim data-noescape>
+                            def create_sftp_client(username, password):
+                                pass
+                        </code>
+                    </pre>
+                </div>
+            </section>
             <section data-background="#f7f2d3">
                 <h2>Tip #2</h2>
                 <p>Use language conventions.</p>
@@ -232,21 +252,111 @@
             </section>
         </section>
 
-        <!-- Beauty lies in simplicity -->
+<!-- Beauty lies in simplicity -->
         <section>
-            <section data-markdown>
-          <textarea data-template>
-            ## Writing beautiful code
-            - write simple code
-            - don't overcomment
-            - TIP: 
-          </textarea>
+            <section>
+                There is beauty in simplicity.
             </section>
             <section>
-                Write once, read many times.
+                <div class="left">
+                    <pre data-badge="don't" data-badge-fg="red">
+                        <code data-trim data-noescape>
+                            counter = 0
+                            while counter < 5:
+                                print(counter)
+                                counter += 1
+                        </code>
+                    </pre>
+                </div>
+                <div class="right">
+                    <pre data-badge="instead" data-badge-fg="green">
+                        <code data-trim data-noescape>
+                            for i in range(5):
+                                print(i)
+                        </code>
+                    </pre>
+                </div>
             </section>
             <section>
-                There is beauty in simplicity
+                Commenting every single line can be a good thing...
+            </section>
+            <section data-transition="fade-in">
+                <pre>
+                    <code data-trim data-noescape>
+                        clear:
+
+                              mov       ah,15
+                              int       10h
+
+                              cmp       al,7
+                              je        clear0
+                              cmp       al,3
+                              ja        clear9
+                    </code>
+                </pre>
+            </section>
+            <section data-transition="fade-in">
+                <pre>
+                    <code data-trim data-noescape>
+                        clear:                      ;initialize display...
+                                                    ;call BIOS video driver to
+                              mov       ah,15       ;get current display mode:
+                              int       10h         ;returns AL = mode, and
+                                                    ;AH = no. of columns.
+                              cmp       al,7        ;if we are in graphics modes
+                              je        clear0      ;(modes 4,5,6) then exit
+                              cmp       al,3        ;but if we are in mode 0-3
+                              ja        clear9      ;or 7 then continue.
+                    </code>
+                </pre>
+            </section>
+            <section>
+                ... but maybe not in Python.
+            </section>
+            <section data-transition="fade-in">
+                <pre>
+                    <code data-trim data-noescape>
+                        def pfPasswordHash(arg):
+                            # Randomise Salt
+                            salt = os.urandom(6)
+                            # Convert String to Byte Array
+                            res = arg.encode()
+                            # Hash through 10000 times.
+                            for lp in range(1000001):
+                                # Always setup hashlib because [...]
+                                m = hashlib.sha256()
+                                # Swap between the two inputs into the digest based on loop number
+                                m.update(res) if lp % 2 else m.update(salt)
+                                m.update(salt) if lp % 2 else m.update(res)
+                                # Finish the digest
+                                res = m.digest()
+                    </code>
+                </pre>
+            </section>
+            <section data-transition="fade-in">
+                <pre>
+                    <code data-trim data-noescape>
+                        def pfPasswordHash(arg):
+                            <strike># Randomise Salt</strike>
+                            salt = os.urandom(6)
+                            <strike class="strike"># Convert String to Byte Array</strike>
+                            res = arg.encode()
+                            <strike class="strike"># Hash through 10000 times.</strike>
+                            for lp in range(1000001):
+                                # Always setup hashlib because [...]
+                                m = hashlib.sha256()
+                                <strike class="strike"># Swap between the two inputs into the digest based on loop number</strike>
+                                m.update(res) if lp % 2 else m.update(salt)
+                                m.update(salt) if lp % 2 else m.update(res)
+                                <strike class="strike"># Finish the digest</strike>
+                                res = m.digest()
+                    </code>
+                </pre>
+            </section>
+            <section data-background="#f7f2d3">
+                <h2>Tip #3</h2>
+                <p>Try to write simple, but functional code.</p>
+                <p>Comment only what you cannot say in code.</p>
             </section>
         </section>
 

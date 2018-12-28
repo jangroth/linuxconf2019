@@ -295,7 +295,6 @@
                         </code>
                     </pre>
             </section>
-
             <section>
                 Commenting every single line can be a good thing...
             </section>
@@ -382,17 +381,6 @@
 
         <!-- Scope & classes -->
         <section>
-            <section data-markdown>
-          <textarea data-template>
-            ## Scope & classes
-            - example: one page script (no classes)
-            - problems with this (data interacts with functions interact, but is not coupled)
-            - solution: classes
-            - design from api
-            - benefits
-            - TIP: encapsulate behaviour
-          </textarea>
-            </section>
             <section>
                 A basic 'calculator'
             </section>
@@ -439,7 +427,7 @@
                 <ul>
                     <li>A class is a <em>blueprint</em> for objects</li>
                     <li>An object encapsulates data as well as methods</li>
-                    <li>Think of objects as <em>nouns</em> and methods as <em>verbs</em></li>
+                    <li>Think of objects as <em>nouns</em> and of methods as <em>verbs</em></li>
                 </ul>
             </section>
             <section>
@@ -470,11 +458,41 @@
                 </pre>
             </section>
             <section>
+                <p>Syncing a file between SFTP and S3</p>
+                <pre>
+                    <code class="python" data-trim data-noescape>
+                        s2s_sync = Sftp2S3(server_name='a.b.c', bucket_name='my-bucket')
+
+                        s2s_sync.sync_file('foo.txt')
+                        s2s_sync.sync_file('baz/bar.txt')
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <p>Implementation</p>
+                <pre>
+                    <code class="python" data-trim data-noescape>
+                        class Sftp2S3:
+                            def __init__(self, server_name, bucket_name):
+                                self.bucket = boto3.resource('s3').Bucket(bucket_name)
+                                self.sftp_server = self._init_sftp(server_name)
+
+                            def _init_sftp(self, server_name): pass
+                            def _needs_sync(self, file_name): pass
+                            def _copy_from_sftp(self, file_name): pass
+
+                            def sync_file(self, file_name):
+                                if (self._needs_sync(file_name)):
+                                    self._copy_from_sftp(file_name)
+                    </code>
+                </pre>
+            </section>
+            <section>
                 <p>This is just a sneak peek into classes</p>
                 <ul>
                     <li>Re-use code elsewhere</li>
                     <li>Utilize inheritance</li>
-                    <li>Implement your own generator, collection, ...</li>
+                    <li>Implement your own generators, collections, ...</li>
                     <li>And ...</li>
                 </ul>
             </section>
@@ -496,31 +514,10 @@
                     </code>
                 </pre>
             </section>
-
-
-            <section data-transition="fade-in">
-        <pre><code data-trim data-noescape>
-        class SftpToS3():
-
-          <mark> def __init__(self, sftp_server, bucket_name): </mark>
-            self.sftp_client   = self._get_sftp_client(…)
-            self.target_bucket = boto3.Bucket(bucket_name)
-
-          def _get_sftp_client(self, value): 
-            return …
-        </code></pre>
-            </section>
-            <section data-transition="fade-in">
-        <pre><code data-trim data-noescape>
-        class SftpToS3():
-
-          def __init__(self, sftp_server, bucket_name):
-           <mark>  self.sftp_client   = self._get_sftp_client(…)</mark>
-            self.target_bucket = boto3.Bucket(bucket_name)
-
-          def _get_sftp_client(self, value): 
-            return …
-        </code></pre>
+            <section data-background="#f7f2d3">
+                <h2>Tip #4</h2>
+                <p>Learn how to use classes.</p>
+                <p>Try to encapsulate behaviour as well as state.</p>
             </section>
         </section>
 

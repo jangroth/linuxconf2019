@@ -11,6 +11,9 @@
         gtag('config', 'UA-131298185-1');
 
 
+
+
+
     </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -29,6 +32,9 @@
         link.type = 'text/css';
         link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+
+
 
 
     </script>
@@ -305,7 +311,7 @@
                             codes.append(ord(symbol))
                         </code>
                     </pre>
-                    <pre data-badge="instead" data-badge-fg="green">
+                <pre data-badge="instead" data-badge-fg="green">
                         <code class="python" data-trim data-noescape>
                             symbols = '$¢£¥€¤'
                             codes = [ord(symbol) for symbol in symbols]
@@ -410,6 +416,111 @@
             - TIP: encapsulate behaviour
           </textarea>
             </section>
+            <section>
+                A basic 'calculator'
+            </section>
+            <section>
+                <pre>
+                    <code class="python" data-trim data-noescape>
+                        base = 10
+
+                        def multiply(number):
+                            return base * number
+
+                        def add(number):
+                            return base + number
+
+                        print(multiply(5))
+                        print(add(7))
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <pre>
+                    <code class="python" data-trim data-noescape>
+                        base = 10
+
+                        def multiply(number):
+                            return base * number
+
+                        def add(number):
+                            return base + number
+
+                        print(multiply(5))
+                        print(add(7))
+
+                        base = 13
+                        print(multiply(5))
+                        print(add(7))
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <p>
+                    Using classes to redesign the calculator
+                </p>
+                <ul>
+                    <li>A class is a <em>blueprint</em> for objects</li>
+                    <li>An object encapsulates data as well as methods</li>
+                    <li>Think of objects as <em>nouns</em> and methods as <em>verbs</em></li>
+                </ul>
+            </section>
+            <section>
+                <p>API</p>
+                <pre>
+                    <code class="python" data-trim data-noescape>
+                        base_ten_calc = Calculator(base=10)
+
+                        print(base_ten_calc.multiply_by(5))
+                        print(base_ten_calc.add_to(5))
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <p>Implementation</p>
+                <pre>
+                    <code class="python" data-trim data-noescape>
+                        class Calculator:
+                            def __init__(self, base):
+                                self.base = base
+
+                            def multiply_by(self, number):
+                                return self.base * number
+
+                            def add_to(self, number):
+                                return self.base + number
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <p>This is just a sneak peek into classes</p>
+                <ul>
+                    <li>Re-use code elsewhere</li>
+                    <li>Utilize inheritance</li>
+                    <li>Implement your own generator, collection, ...</li>
+                    <li>And ...</li>
+                </ul>
+            </section>
+            <section>
+                <p>Unit testing</p>
+                <pre>
+                    <code class="python" data-trim data-noescape>
+                        class TestCalculator(TestCase):
+
+                            def test_multiply_with_zero_is_zero(self):
+                                # setup
+                                calc = Calculator(29)
+
+                                # exercise
+                                result = calc.multiply_by(0)
+
+                                # verify
+                                self.assertEqual(0, result)
+                    </code>
+                </pre>
+            </section>
+
+
             <section data-transition="fade-in">
         <pre><code data-trim data-noescape>
         class SftpToS3():
@@ -517,6 +628,9 @@
                         { src: 'reveal/plugin/badges/badges.js'}
                     ]
         });
+
+
+
 
 
 </script>

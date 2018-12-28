@@ -16,19 +16,26 @@ def sftp_client(username, password):
     pass
 
 
-def sftp_client(username, password):
-    """
-    This method uses the supplied credentials to create a new sftp client.
-    """
-    pass
-
-
-def create_sftp_client(username, password):
-    """
-    This method uses the supplied credentials to create a new sftp client.
-    """
-    pass
-
-
 def create_sftp_client(username, password):
     pass
+
+
+current_instances = []
+
+
+def add_instance():
+    pass
+
+
+# scale out if less than 3 instances
+if len(current_instances) < 3:
+    add_instance()
+
+
+# scale out if less than 3 instances
+def should_scale_out(current_instances):
+    pass
+
+
+if should_scale_out(current_instances):
+    add_instance()

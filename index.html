@@ -9,11 +9,6 @@
         gtag('js', new Date());
 
         gtag('config', 'UA-131298185-1');
-
-
-
-
-
     </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -32,11 +27,6 @@
         link.type = 'text/css';
         link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
-
-
-
-
-
     </script>
 </head>
 <body>
@@ -189,44 +179,16 @@
             </section>
             <section>
                 <p>Write once, read many times.</p>
-                <p class="fragment">Let's talk about naming things...</p>
             </section>
             <section>
-                <pre>
-                    <code class="python" data-trim data-noescape>
-                        # uses supplied credentials to create new sftp client
-                        def sftp_client(username, password):
-                            pass
+                <pre data-badge="don't" data-badge-fg="red">
+                    <code class="plaintext" data-trim data-noescape>
+                        index.py
                     </code>
                 </pre>
-            </section>
-            <section>
-                <pre>
-                    <code class="python" data-trim data-noescape>
-                        def sftp_client(username, password):
-                            """
-                            This method uses the supplied credentials to create a new sftp client.
-                            """
-                            pass
-                    </code>
-                </pre>
-            </section>
-            <section>
-                <pre>
-                    <code class="python" data-trim data-noescape>
-                        def create_sftp_client(username, password):
-                            """
-                            This method uses the supplied credentials to create a new sftp client.
-                            """
-                            pass
-                    </code>
-                </pre>
-            </section>
-            <section>
-                <pre>
-                    <code class="python" data-trim data-noescape>
-                        def create_sftp_client(username, password):
-                            pass
+                <pre data-badge="instead" data-badge-fg="green">
+                    <code class="plaintext" data-trim data-noescape>
+                        rewards-calculation-lambda.py
                     </code>
                 </pre>
             </section>
@@ -242,6 +204,21 @@
                     <code class="python" data-trim data-noescape>
                         def create_sftp_client(username, password):
                             pass
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <pre data-badge="don't" data-badge-fg="red">
+                    <code class="python" data-trim data-noescape>
+                        # scale out if less than 3 instances
+                        if len(current_instances) < 3:
+                            add_instance()
+                    </code>
+                </pre>
+                <pre data-badge="instead" data-badge-fg="green">
+                    <code class="python" data-trim data-noescape>
+                        if should_scale_out(current_instances):
+                            add_instance()
                     </code>
                 </pre>
             </section>
@@ -628,11 +605,6 @@
                         { src: 'reveal/plugin/badges/badges.js'}
                     ]
         });
-
-
-
-
-
 </script>
 </body>
 </html>

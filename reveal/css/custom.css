@@ -15,6 +15,12 @@
   width:50%;
 }
 
+.center {
+  float: none;
+  z-index:-10;
+  width:100%;
+}
+
 /* debug only
 body {
   background-image: url("background_720.png")

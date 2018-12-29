@@ -109,7 +109,7 @@
             <section>
                 <h2>Python versions & dependencies</h2>
                 <ul>
-                    <li>Python environment <strong>per project</strong></li>
+                    <li>One Python environment <strong>per project</strong></li>
                     <ul>
                         <strong>Don't</strong> use the system environment
                     </ul>
@@ -170,16 +170,15 @@
                 <p>Why is touch-typing useful?</p>
             </section>
             <section>
+                <p>Following coding conventions makes it easier to process code.</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         CONSTANTS_IN_UPPERCASE = 123
 
                         variables_are_lowercase = 'OH YES!'
 
-
                         def methods_are_lowercase_too():
                             pass
-
 
                         def all_use_kebap_case():
                             pass
@@ -211,7 +210,7 @@
                 </pre>
                 <pre data-badge="instead" data-badge-fg="green">
                     <code class="python" data-trim data-noescape>
-                        def create_sftp_client(username, password):
+                        def <mark>create_sftp_client</mark>(username, password):
                             pass
                     </code>
                 </pre>
@@ -226,7 +225,7 @@
                 </pre>
                 <pre data-badge="instead" data-badge-fg="green">
                     <code class="python" data-trim data-noescape>
-                        if should_scale_out(current_instances):
+                        if <mark>should_scale_out</mark>(current_instances):
                             add_instance()
                     </code>
                 </pre>
@@ -301,7 +300,7 @@
                 <pre data-badge="instead" data-badge-fg="green">
                         <code class="python" data-trim data-noescape>
                             symbols = '$¢£¥€¤'
-                            codes = [ord(symbol) for symbol in symbols]
+                            codes = <mark>[ord(symbol) for symbol in symbols]</mark>
                         </code>
                     </pre>
             </section>
@@ -395,7 +394,7 @@
                     </code>
                 </pre>
             </section>
-            <section>
+            <section data-transition="slide-in fade-out">
                 <pre>
                     <code class="python" data-trim data-noescape>
                         base = 10
@@ -415,6 +414,26 @@
                     </code>
                 </pre>
             </section>
+            <section data-transition="fade-in slide-out">
+                <pre>
+                    <code class="python" data-trim data-noescape>
+                        <mark>base = 10</mark>
+
+                        def multiply(number):
+                            return base * number
+
+                        def add(number):
+                            return base + number
+
+                        print(multiply(5))
+                        print(add(7))
+
+                        <mark>base = 13</mark>
+                        print(multiply(5))
+                        print(add(7))
+                    </code>
+                </pre>
+            </section>
             <section>
                 <p>
                     Using classes to redesign the calculator
@@ -425,18 +444,35 @@
                     <li>Think of objects as <em>nouns</em> and of methods as <em>verbs</em></li>
                 </ul>
             </section>
-            <section>
+            <section data-transition="slide-in fade-out">
+                <p>API first...</p>
+                <pre>
+                    <code class="python" data-trim data-noescape>
+                        base_ten_calc = <mark>Calculator(base=10)</mark>
+                        print(base_ten_calc.multiply_by(5))
+                        print(base_ten_calc.add(7))
+
+                        base_five_calc = <mark>Calculator(base=5)</mark>
+                        print(base_five_calc.multiply_by(5))
+                        print(base_five_calc.add(7))
+                    </code>
+                </pre>
+            </section>
+            <section data-transition="fade-in slide-out">
                 <p>API first...</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         base_ten_calc = Calculator(base=10)
+                        print(base_ten_calc.<mark>multiply_by(5)</mark>)
+                        print(base_ten_calc.<mark>add(7)</mark>)
 
-                        print(base_ten_calc.multiply_by(5))
-                        print(base_ten_calc.add_to(5))
+                        base_five_calc = Calculator(base=5)
+                        print(base_five_calc.<mark>multiply_by(5)</mark>)
+                        print(base_five_calc.<mark>add(7)</mark>)
                     </code>
                 </pre>
             </section>
-            <section>
+            <section data-transition="slide-in fade-out">
                 <p>Implementation</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
@@ -447,13 +483,48 @@
                             def multiply_by(self, number):
                                 return self.base * number
 
-                            def add_to(self, number):
+                            def add(self, number):
                                 return self.base + number
                     </code>
                 </pre>
             </section>
-            <section>
-                <p>Syncing a file between SFTP and S3</p>
+            <section data-transition="fade-in">
+                <p>Implementation</p>
+                <pre>
+                    <code class="python" data-trim data-noescape>
+                        class Calculator:
+                            <mark>def __init__(self, base):</mark>
+                                <mark>self.base = base</mark>
+
+                            def multiply_by(self, number):
+                                return self.base * number
+
+                            def add(self, number):
+                                return self.base + number
+                    </code>
+                </pre>
+            </section>
+            <section data-transition="fade-in slide-out">
+                <p>Implementation</p>
+                <pre>
+                    <code class="python" data-trim data-noescape>
+                        class Calculator:
+                            def __init__(self, base):
+                                self.base = base
+
+                            <mark>def multiply_by(self, number):</mark>
+                                <mark>return self.base * number</mark>
+
+                            def add(self, number):
+                                return self.base + number
+                    </code>
+                </pre>
+            </section>
+            <section data-transition="slide-in fade-out">
+                <p>
+                    A more real-world example - <br/>
+                    Syncing a file between SFTP and S3
+                </p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         s2s_sync = Sftp2S3(server_name='a.b.c', bucket_name='my-bucket')
@@ -463,8 +534,22 @@
                     </code>
                 </pre>
             </section>
-            <section>
-                <p>Implementation idea</p>
+            <section data-transition="fade-in slide-out">
+                <p>
+                    A more real-world example - <br/>
+                    Syncing a file between SFTP and S3
+                </p>
+                <pre>
+                    <code class="python" data-trim data-noescape>
+                        s2s_sync = <mark>Sftp2S3(server_name='a.b.c', bucket_name='my-bucket')</mark>
+
+                        s2s_sync.<mark>sync_file('foo.txt')</mark>
+                        s2s_sync.<mark>sync_file('baz/bar.txt')</mark>
+                    </code>
+                </pre>
+            </section>
+            <section data-transition="slide-in fade-out">
+                <p>Implementation (idea)</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         class Sftp2S3:
@@ -479,6 +564,44 @@
                             def sync_file(self, file_name):
                                 if (self._needs_sync(file_name)):
                                     self._copy_from_sftp(file_name)
+                    </code>
+                </pre>
+            </section>
+            <section data-transition="fade-in">
+                <p>Implementation (idea)</p>
+                <pre>
+                    <code class="python" data-trim data-noescape>
+                        class Sftp2S3:
+                            <mark>def __init__(self, server_name, bucket_name):</mark>
+                                <mark>self.bucket = boto3.resource('s3').Bucket(bucket_name)</mark>
+                                <mark>self.sftp_server = self._init_sftp(server_name)</mark>
+
+                            def _init_sftp(self, server_name): pass
+                            def _needs_sync(self, file_name): pass
+                            def _copy_from_sftp(self, file_name): pass
+
+                            def sync_file(self, file_name):
+                                if (self._needs_sync(file_name)):
+                                    self._copy_from_sftp(file_name)
+                    </code>
+                </pre>
+            </section>
+            <section data-transition="fade-in slide-out">
+                <p>Implementation (idea)</p>
+                <pre>
+                    <code class="python" data-trim data-noescape>
+                        class Sftp2S3:
+                            def __init__(self, server_name, bucket_name):
+                                self.bucket = boto3.resource('s3').Bucket(bucket_name)
+                                self.sftp_server = self._init_sftp(server_name)
+
+                            def _init_sftp(self, server_name): pass
+                            def _needs_sync(self, file_name): pass
+                            def _copy_from_sftp(self, file_name): pass
+
+                            <mark>def sync_file(self, file_name):</mark>
+                                <mark>if (self._needs_sync(file_name)):</mark>
+                                    <mark>self._copy_from_sftp(file_name)</mark>
                     </code>
                 </pre>
             </section>
@@ -562,14 +685,14 @@
             <section>
                 <h2>Python++</h2>
             </section>
-            <section>
+            <section data-transition="slide-in fade-out">
                 <p>Using Jinja to generate Jenkins pipelines</p>
                 <pre data-badge="config.yml">
                     <code class="yaml" data-trim data-noescape>
                         env:
                             sources:
-                            - 'master'
-                            - 'development'
+                            - master
+                            - development
                     </code>
                 </pre>
                 <pre data-badge="pipeline.groovy">
@@ -581,11 +704,34 @@
                 </pre>
                 <pre data-badge="pipeline.groovy.j2">
                     <code class="python" data-trim data-noescape>
-                        SOURCE_ENVS = {{ env.sources | to_groovy_list }}
+                        SOURCE_ENVS = {{ env.sources }}  # Does not come out as a groovy literal...
                     </code>
                 </pre>
             </section>
-            <section>
+            <section data-transition="fade-in slide-out">
+                <p>Using Jinja to generate Jenkins pipelines</p>
+                <pre data-badge="config.yml">
+                    <code class="yaml" data-trim data-noescape>
+                        env:
+                            sources:
+                            - master
+                            - development
+                    </code>
+                </pre>
+                <pre data-badge="pipeline.groovy">
+                    <code class="groovy" data-trim data-noescape>
+                        ...
+                        SOURCE_ENVS = ['master', 'development']
+                        ...
+                    </code>
+                </pre>
+                <pre data-badge="pipeline.groovy.j2">
+                    <code class="python" data-trim data-noescape>
+                        SOURCE_ENVS = {{ env.sources <mark>| to_groovy_list</mark> }} # Custom Jinja filter...
+                    </code>
+                </pre>
+            </section>
+            <section data-transition="slide-in fade-out">
                 <p>Registering a custom Jinja filter</p>
                 <pre data-badge="render_pipeline1.py">
                     <code class="python" data-trim data-noescape>
@@ -603,7 +749,25 @@
                     </code>
                 </pre>
             </section>
-            <section>
+            <section data-transition="fade-in slide-out">
+                <p>Registering a custom Jinja filter</p>
+                <pre data-badge="render_pipeline1.py">
+                    <code class="python" data-trim data-noescape>
+                        from jinja2 import Environment
+
+                        jinja_env = Environment()  # [...]
+                        jinja_env.filters['quoted'] = quoted
+                        <mark>jinja_env.filters['to_groovy_list'] = to_groovy_list</mark>
+
+                        def quoted(text):
+                            return "'{}'".format(text)
+
+                        def to_groovy_list(list):
+                            return '[{}]'.format(', '.join(map(quoted, list)))
+                    </code>
+                </pre>
+            </section>
+            <section data-transition="slide-in fade-out">
                 <p>The same, using a decorator</p>
                 <pre data-badge="render_pipeline2.py">
                     <code class="python" data-trim data-noescape>
@@ -617,6 +781,25 @@
                             return "'{}'".format(text)
 
                         @custom_filter
+                        def to_groovy_list(list):
+                            return '[{}]'.format(', '.join(map(quoted, list)))
+                    </code>
+                </pre>
+            </section>
+            <section data-transition="fade-in slide-out">
+                <p>The same, using a decorator</p>
+                <pre data-badge="render_pipeline2.py">
+                    <code class="python" data-trim data-noescape>
+                        jinja_env = Environment()  # [...]
+
+                        <mark>def custom_filter(func):</mark>
+                            jinja_env.filters[func.__name__] = func
+
+                        <mark>@custom_filter</mark>
+                        def quoted(text):
+                            return "'{}'".format(text)
+
+                        <mark>@custom_filter</mark>
                         def to_groovy_list(list):
                             return '[{}]'.format(', '.join(map(quoted, list)))
                     </code>

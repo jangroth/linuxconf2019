@@ -9,6 +9,7 @@
         gtag('js', new Date());
 
         gtag('config', 'UA-131298185-1');
+
     </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -27,6 +28,7 @@
         link.type = 'text/css';
         link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
+
     </script>
 </head>
 <body>
@@ -297,25 +299,11 @@
                         </code>
                     </pre>
             </section>
-            <section>
-                Commenting every single line can be a good thing...
+            <section data-transition="fade-in">
+                <p>Commenting every single line is essential...</p>
             </section>
             <section data-transition="fade-in">
-                <pre>
-                    <code class="assembler" data-trim data-noescape>
-                        clear:
-
-                              mov       ah,15
-                              int       10h
-
-                              cmp       al,7
-                              je        clear0
-                              cmp       al,3
-                              ja        clear9
-                    </code>
-                </pre>
-            </section>
-            <section data-transition="fade-in">
+                <p>..if you are writing in Assembler.</p>
                 <pre>
                     <code class="assembler" data-trim data-noescape>
                         clear:                      ; initialize display...
@@ -330,10 +318,8 @@
                     </code>
                 </pre>
             </section>
-            <section>
-                ... but maybe not in Python.
-            </section>
             <section data-transition="fade-in">
+                <p>In Python not so much.</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         def pfPasswordHash(arg):
@@ -434,7 +420,7 @@
                 </ul>
             </section>
             <section>
-                <p>API</p>
+                <p>API first...</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         base_ten_calc = Calculator(base=10)
@@ -472,7 +458,7 @@
                 </pre>
             </section>
             <section>
-                <p>Implementation</p>
+                <p>Implementation idea</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         class Sftp2S3:
@@ -548,7 +534,8 @@
             <section data-background="#f7f2d3">
                 <h2>Tip #5</h2>
                 <p>Python is a high-level programming language.</p>
-                <p>Use an IDE. Just because you can.</p>
+                <p>Use an IDE.<p>
+                <p>Just because you can.</p>
             </section>
         </section>
 
@@ -566,17 +553,35 @@
 
         <!-- Outro -->
         <section>
-            <section data-markdown>
-          <textarea data-template>
-           ## Outro
-          </textarea>
+            <section>
+                <h2>That's all I have.</h2>
+                <p>I hope you find it useful.</p>
+                <p>Alternatively, ...</p>
             </section>
-            <section data-markdown>
-          <textarea data-template>
-           > Here’s the plan: when someone uses a feature you don’t understand, simply shoot them. This is easier than learning something new, and before too long the only living coders will be writing in an easily understood, tiny subset of Python 0.9.6 <wink>
-
-           - *Tim Peters, Legendary core developer and author of The Zen of Python*
-          </textarea>
+            <section>
+                <blockquote>Here’s the plan: </blockquote>
+                <blockquote>When someone uses a feature you don’t understand, simply shoot them. This is easier than learning something new, and before too long the only living coders will be writing in an easily understood, tiny subset of Python 0.9.6 ;-)</blockquote>
+                <p>
+                    <small>
+                        Source: Tim Peters, Legendary core developer and author of The Zen of Python
+                    </small>
+                </p>
+            </section>
+            <section>
+                <p>
+                    Talk:
+                </p>
+                <p>
+                    <a href="https://jangroth.github.io/linuxconf2019/#/">jangroth.github.io/linuxconf2019</a>
+                </p>
+                <br/>
+                <br/>
+                <p>
+                    References and further reading:
+                </p>
+                <p>
+                    <a href="https://github.com/jangroth/linuxconf2019/">github.com/jangroth/linuxconf2019</a>
+                </p>
             </section>
         </section>
 
@@ -620,6 +625,7 @@
                         { src: 'reveal/plugin/badges/badges.js'}
                     ]
         });
+
 </script>
 </body>
 </html>

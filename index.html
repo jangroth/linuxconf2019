@@ -9,10 +9,6 @@
         gtag('js', new Date());
 
         gtag('config', 'UA-131298185-1');
-
-
-
-
     </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -31,10 +27,6 @@
         link.type = 'text/css';
         link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
-
-
-
-
     </script>
 </head>
 <body>
@@ -910,13 +902,6 @@
 <script src="reveal/js/reveal.js"></script>
 <script>
     Reveal.initialize({
-        <!--symbolperslideprogress: {-->
-            <!--position: "left", // left/right-->
-            <!--align: "horizontal", // vertical/horizontal-->
-            <!--symbolColor: "", // Colors like red/#ff0000/rgb(255, 0, 0)-->
-            <!--symbolActiveColor: "",-->
-        <!--},-->
-
         // presentation size
         width: 1280,
         height: 720,
@@ -933,20 +918,11 @@
         progress: true,
         hideAddressBar: true,
         dependencies: [
-                        { src: 'reveal/plugin/markdown/marked.js' },
                         { src: 'reveal/plugin/elapsed-time-bar/elapsed-time-bar.js' },
-                        { src: 'reveal/plugin/markdown/markdown.js' },
-                        { src: 'reveal/plugin/notes/notes.js', async: true },
                         { src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-                        <!--{ src: 'reveal/plugin/symbol-per-slide-progress/symbol-per-slide-progress.js', async: true },-->
-                        { src: 'reveal/plugin/elapsed-time-bar/elapsed-time-bar.js'},
                         { src: 'reveal/plugin/badges/badges.js'}
                     ]
         });
-
-
-
-
 </script>
 </body>
 </html>

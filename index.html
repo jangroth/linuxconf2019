@@ -234,6 +234,7 @@
                 <h2>Tip #2</h2>
                 <p>Use language conventions.</p>
                 <p>Make an effort to find good names.</p>
+                <p>Use method extraction to increase readability</p>
             </section>
         </section>
 
@@ -345,6 +346,7 @@
                 </pre>
             </section>
             <section data-transition="fade-in">
+                <p>In Python not so much.</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         def pfPasswordHash(arg):
@@ -534,7 +536,7 @@
                     </code>
                 </pre>
             </section>
-            <section data-transition="fade-in slide-out">
+            <section data-transition="fade-in">
                 <p>
                     A more real-world example - <br/>
                     Syncing a file between SFTP and S3
@@ -542,6 +544,20 @@
                 <pre>
                     <code class="python" data-trim data-noescape>
                         s2s_sync = <mark>Sftp2S3(server_name='a.b.c', bucket_name='my-bucket')</mark>
+
+                        s2s_sync.sync_file('foo.txt')
+                        s2s_sync.sync_file('baz/bar.txt')
+                    </code>
+                </pre>
+            </section>
+            <section data-transition="fade-in slide-out">
+                <p>
+                    A more real-world example - <br/>
+                    Syncing a file between SFTP and S3
+                </p>
+                <pre>
+                    <code class="python" data-trim data-noescape>
+                        s2s_sync = Sftp2S3(server_name='a.b.c', bucket_name='my-bucket')
 
                         s2s_sync.<mark>sync_file('foo.txt')</mark>
                         s2s_sync.<mark>sync_file('baz/bar.txt')</mark>
@@ -635,7 +651,7 @@
             <section data-background="#f7f2d3">
                 <h2>Tip #4</h2>
                 <p>Try to encapsulate behaviour as well as state.</p>
-                <p>Learn how to use classes - they are the door opener to structured coding</p>
+                <p>Learn how to use classes - they are the door opener to a whole world of programming features</p>
             </section>
         </section>
 
@@ -660,7 +676,7 @@
                 <img src="resources/import.png">
             </section>
             <section>
-                <p>Reformatting according to Python standard...</p>
+                <p>Reformatting according to Python standards...</p>
                 <img src="resources/reformat.png">
             </section>
             <section>
@@ -668,7 +684,7 @@
                 <img src="resources/debugger.png">
             </section>
             <section>
-                <p>Changing a method name across the whole project?</p>
+                <p>Changing a method name across the whole project...</p>
                 <img src="resources/refactor.png">
             </section>
             <section data-background="#f7f2d3">
@@ -762,8 +778,8 @@
                         def quoted(text):
                             return "'{}'".format(text)
 
-                        def to_groovy_list(list):
-                            return '[{}]'.format(', '.join(map(quoted, list)))
+                        <mark>def to_groovy_list(list):</mark>
+                            <mark>return '[{}]'.format(', '.join(map(quoted, list)))</mark>
                     </code>
                 </pre>
             </section>
@@ -874,17 +890,15 @@
             <section>
                 <p>
                     This Talk:
-                </p>
-                <p>
-                    <a href="https://jangroth.github.io/linuxconf2019/#/">jangroth.github.io/linuxconf2019</a>
+                    <br />
+                    <a href="https://jangroth.github.io/linuxconf2019">jangroth.github.io/linuxconf2019</a>
                 </p>
                 <br/>
                 <br/>
                 <p>
                     References and further reading:
-                </p>
-                <p>
-                    <a href="https://github.com/jangroth/linuxconf2019/">github.com/jangroth/linuxconf2019</a>
+                    <br/>
+                    <a href="https://github.com/jangroth/linuxconf2019">github.com/jangroth/linuxconf2019</a>
                 </p>
             </section>
         </section>

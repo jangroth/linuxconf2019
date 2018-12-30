@@ -100,11 +100,19 @@
             </section>
             <section>
                 <h2>Python versions & dependencies</h2>
+            </section>
+            <section>
                 <ul>
                     <li>One Python environment <strong>per project</strong></li>
                     <ul>
-                        <strong>Don't</strong> use the system environment
+                        <li>
+                            <strong>Don't</strong> use the system environment
+                        </li>
                     </ul>
+                </ul>
+            </section>
+            <section>
+                <ul>
                     <li>Dependencies as <strong>unspecific as possible</strong></li>
                     <ul>
                         <li>Only direct dependencies</li>
@@ -131,7 +139,7 @@
                         </code>
                     </pre>
                 </div>
-                <div class="right">
+                <div class="right fragment">
                     <pre data-badge="instead" data-badge-fg="green">
                         <code class="plaintext" data-trim data-noescape>
                             boto3
@@ -162,7 +170,7 @@
                 <p>Why is touch-typing useful?</p>
             </section>
             <section>
-                <p>Following coding conventions makes it easier to process code.</p>
+                <p>More conventions -> less thinking :)</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         CONSTANTS_IN_UPPERCASE = 123
@@ -184,9 +192,10 @@
                 <pre data-badge="don't" data-badge-fg="red">
                     <code class="plaintext" data-trim data-noescape>
                         index.py
+                        lambda.py
                     </code>
                 </pre>
-                <pre data-badge="instead" data-badge-fg="green">
+                <pre data-badge="instead" data-badge-fg="green" class="fragment">
                     <code class="plaintext" data-trim data-noescape>
                         rewards-calculation-lambda.py
                     </code>
@@ -200,7 +209,7 @@
                             pass
                     </code>
                 </pre>
-                <pre data-badge="instead" data-badge-fg="green">
+                <pre data-badge="instead" data-badge-fg="green" class="fragment">
                     <code class="python" data-trim data-noescape>
                         def <mark>create_sftp_client</mark>(username, password):
                             pass
@@ -215,7 +224,7 @@
                             add_instance()
                     </code>
                 </pre>
-                <pre data-badge="instead" data-badge-fg="green">
+                <pre data-badge="instead" data-badge-fg="green" class="fragment">
                     <code class="python" data-trim data-noescape>
                         if <mark>should_scale_out</mark>(current_instances):
                             add_instance()
@@ -247,7 +256,7 @@
                         </code>
                     </pre>
                 </div>
-                <div class="right">
+                <div class="right fragment">
                     <pre data-badge="instead" data-badge-fg="green">
                         <code class="python" data-trim data-noescape>
                             for i in range(5):
@@ -383,8 +392,8 @@
                         def add(number):
                             return base + number
 
-                        print(multiply(5))
-                        print(add(7))
+                        print(multiply(5))  # ...50
+                        print(add(7))       # ...12
                     </code>
                 </pre>
             </section>
@@ -399,12 +408,12 @@
                         def add(number):
                             return base + number
 
-                        print(multiply(5))
-                        print(add(7))
+                        print(multiply(5))  # ...50
+                        print(add(7))       # ...12
 
                         base = 13
-                        print(multiply(5))
-                        print(add(7))
+                        print(multiply(5))  # ...65
+                        print(add(7))       # ...20
                     </code>
                 </pre>
             </section>
@@ -419,12 +428,12 @@
                         def add(number):
                             return base + number
 
-                        print(multiply(5))
-                        print(add(7))
+                        print(multiply(5))  # ...50
+                        print(add(7))       # ...12
 
                         <mark>base = 13</mark>
-                        print(multiply(5))
-                        print(add(7))
+                        print(multiply(5))  # ...65
+                        print(add(7))       # ...20
                     </code>
                 </pre>
             </section>
@@ -668,7 +677,7 @@
                 <img src="resources/import.png">
             </section>
             <section>
-                <p>Reformatting according to Python standards...</p>
+                <p>Reformatting code according to Python standards...</p>
                 <img src="resources/reformat.png">
             </section>
             <section>
@@ -703,14 +712,14 @@
                             - development
                     </code>
                 </pre>
-                <pre data-badge="pipeline.groovy">
+                <pre data-badge="pipeline.groovy" class="fragment">
                     <code class="groovy" data-trim data-noescape>
                         ...
                         SOURCE_ENVS = ['master', 'development']
                         ...
                     </code>
                 </pre>
-                <pre data-badge="pipeline.groovy.j2">
+                <pre data-badge="pipeline.groovy.j2" class="fragment">
                     <code class="python" data-trim data-noescape>
                         SOURCE_ENVS = {{ env.sources }}  # Does not come out as a groovy literal...
                     </code>

@@ -63,8 +63,7 @@
                 <h2>About this talk</h2>
                 <p>
                 <ul class="fragment">
-                    <li class="fragment strike">Here are 10 Python features, now start using them</li>
-                    <li class="fragment">I'm not a Python guru</li>
+                    <li class="fragment strike">I'm a Python guru, here are 10 Python features - now start using them!</li>
                     <li class="fragment">Things that I found helpful when I switched to Python</li>
                     <li class="fragment">Don't take notes</li>
                 </ul>
@@ -76,6 +75,8 @@
         <section>
             <section>
                 <h2>What year is this?</h2>
+            </section>
+            <section>
                 <ul>
                     <li class="fragment">Most popular movie: 'The Dark Knight'</li>
                     <li class="fragment">'Lehman Brothers' file for bankruptcy</li>
@@ -171,7 +172,7 @@
                 <p>Why is touch-typing useful?</p>
             </section>
             <section>
-                <p>More conventions -> less thinking :)</p>
+                <p>More conventions means less thinking...</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         CONSTANTS_IN_UPPERCASE = 123
@@ -244,7 +245,7 @@
         <section>
             <section>
                 <h1>Writing beautiful code</h1>
-                There is beauty in simplicity.
+                <p class='fragment'>There is beauty in simplicity.</p>
             </section>
             <section>
                 <div class="left">
@@ -284,7 +285,7 @@
                 </pre>
             </section>
             <section>
-                <p>The same, using list comprehension</p>
+                <p>The same, using <strong>list comprehension</strong></p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         codes = [ord(symbol) for symbol in symbols]
@@ -336,7 +337,7 @@
                             # Convert String to Byte Array
                             res = arg.encode()
                             # Hash through 10000 times.
-                            for lp in range(10000):
+                            for lp in range(100000):
                                 # Always initialize hashlib, because [...]
                                 m = hashlib.sha256()
                                 # Swap between the two inputs into the digest based on loop number
@@ -357,7 +358,7 @@
                             <strike class="strike"># Convert String to Byte Array</strike>
                             res = arg.encode()
                             <strike class="strike"># Hash through 10000 times.</strike>
-                            for lp in range(10000):
+                            for lp in range(100000):
                                 <mark># Always initialize hashlib, because [...]</mark>
                                 m = hashlib.sha256()
                                 <strike class="strike"># Swap between the two inputs into the digest based on loop number</strike>

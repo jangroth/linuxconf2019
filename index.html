@@ -203,6 +203,7 @@
                 </pre>
             </section>
             <section>
+                <p>Does this comment add value?</p>
                 <pre data-badge="don't" data-badge-fg="red">
                     <code class="python" data-trim data-noescape>
                         # uses supplied credentials to create new sftp client
@@ -218,6 +219,7 @@
                 </pre>
             </section>
             <section>
+                <p>Well, this comment does...</p>
                 <pre data-badge="don't" data-badge-fg="red">
                     <code class="python" data-trim data-noescape>
                         # scale out if less than 3 instances
@@ -382,7 +384,7 @@
                 <h1>Classes</h1>
                 A basic 'calculator'
             </section>
-            <section>
+            <section data-transition="slide-in fade-out">
                 <pre>
                     <code class="python" data-trim data-noescape>
                         base = 10
@@ -395,10 +397,14 @@
 
                         print(multiply(5))  # ...50
                         print(add(7))       # ...12
+
+
+
+                        .
                     </code>
                 </pre>
             </section>
-            <section data-transition="slide-in fade-out">
+            <section data-transition="fade-in fade-out">
                 <pre>
                     <code class="python" data-trim data-noescape>
                         base = 10
@@ -418,7 +424,7 @@
                     </code>
                 </pre>
             </section>
-            <section data-transition="fade-in slide-out">
+            <section data-transition="fade-in fade-out">
                 <pre>
                     <code class="python" data-trim data-noescape>
                         <mark>base = 10</mark>
@@ -438,13 +444,33 @@
                     </code>
                 </pre>
             </section>
+            <section data-transition="fade-in slide-out">
+                <pre>
+                    <code class="python" data-trim data-noescape>
+                        base = 10
+
+                        <mark>def multiply(number):</mark>
+                            return base * number
+
+                        <mark>def add(number):</mark>
+                            return base + number
+
+                        print(multiply(5))  # ...50
+                        print(add(7))       # ...12
+
+                        base = 13
+                        print(multiply(5))  # ...65
+                        print(add(7))       # ...20
+                    </code>
+                </pre>
+            </section>
             <section>
                 <p>
                     Using classes to redesign the calculator
                 </p>
                 <ul>
                     <li>A class is a <strong>blueprint</strong> for objects</li>
-                    <li>An object encapsulates data as well as methods</li>
+                    <li>An object <strong>encapsulates</strong> data as well as methods</li>
                     <li>Think of objects as <strong>nouns</strong> and of methods as <strong>verbs</strong></li>
                 </ul>
             </section>
@@ -455,10 +481,6 @@
                         base_ten_calc = <mark>Calculator(base=10)</mark>
                         print(base_ten_calc.multiply_by(5))
                         print(base_ten_calc.add(7))
-
-                        base_five_calc = <mark>Calculator(base=5)</mark>
-                        print(base_five_calc.multiply_by(5))
-                        print(base_five_calc.add(7))
                     </code>
                 </pre>
             </section>
@@ -469,10 +491,20 @@
                         base_ten_calc = Calculator(base=10)
                         print(base_ten_calc.<mark>multiply_by(5)</mark>)
                         print(base_ten_calc.<mark>add(7)</mark>)
+                    </code>
+                </pre>
+              </section>
+              <section>
+                <p>Different calculators are separate objects...</p>
+                <pre>
+                    <code class="python" data-trim data-noescape>
+                        <mark>base_ten_calc</mark> = Calculator(base=10)
+                        print(base_ten_calc.multiply_by(5))
+                        print(base_ten_calc.add(7))
 
-                        base_five_calc = Calculator(base=5)
-                        print(base_five_calc.<mark>multiply_by(5)</mark>)
-                        print(base_five_calc.<mark>add(7)</mark>)
+                        <mark>base_five_calc</mark> = Calculator(base=5)
+                        print(base_five_calc.multiply_by(5))
+                        print(base_five_calc.add(7))
                     </code>
                 </pre>
             </section>
@@ -653,7 +685,7 @@
             <section data-background="#f7f2d3">
                 <h2>Tip #4</h2>
                 <p>Try to encapsulate behaviour as well as state.</p>
-                <p>Learn how to use classes - they are the door opener to a whole world of programming features</p>
+                <p>Learn how to use classes - they open the door to a whole world of cool features</p>
             </section>
         </section>
 
@@ -881,13 +913,13 @@
                 <p>Alternatively, ...</p>
             </section>
             <section>
-                <blockquote>Here’s the plan:</blockquote>
-                <blockquote>When someone uses a feature you don’t understand, simply shoot them. This is easier than learning something new, and before too long the only living coders will be writing in an easily understood, tiny subset of Python 0.9.6 ;-)</blockquote>
                 <p>
-                    <small>
-                        Source: Tim Peters, Python core developer
-                    </small>
+                    Tim Peters, Python core developer:
                 </p>
+                <blockquote>
+                    Here's the plan:<br/>
+                    When someone uses a feature you don’t understand, simply <strong>shoot</strong> them. This is <strong>easier than learning</strong> something new, and before too long the only living coders will be writing in an easily understood, tiny subset of Python 0.9.6 ;-)
+                </blockquote>
             </section>
             <section>
                 <p>

@@ -15,6 +15,13 @@
   width:50%;
 }
 
+.reveal strong, .reveal b {
+  color: #657b83;
+  text-shadow: 1px 0 #657b83;
+  letter-spacing:1px;
+  font-weight:bold;
+}
+
 /* debug only
 body {
   background-image: url("background_720.png")

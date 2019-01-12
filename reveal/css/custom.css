@@ -15,6 +15,11 @@
   width:50%;
 }
 
+.reveal, .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  color: #f7f2d3;
+}
+
+
 .reveal strong, .reveal b {
   color: #657b83;
   text-shadow: 1px 0 #657b83;

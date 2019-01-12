@@ -59,11 +59,11 @@
                 </p>
             </section>
             <section>
-                <h2>About this talk</h2>
+                <h2>This talk</h2>
                 <p>
                 <ul class="fragment">
                     <li class="fragment strike">I'm a Python guru, here are 10 Python features - now start using them!</li>
-                    <li class="fragment">Things that I found helpful when I switched to Python</li>
+                    <li class="fragment">Things that I find helpful when writing code Python</li>
                     <li class="fragment">Don't take notes</li>
                 </ul>
                 </p>
@@ -77,18 +77,18 @@
             </section>
             <section>
                 <ul>
-                    <li class="fragment">Most popular movie: 'The Dark Knight'</li>
-                    <li class="fragment">'Lehman Brothers' file for bankruptcy</li>
-                    <li class="fragment">'Spotify' launches in Sweden</li>
-                    <li class="fragment">Lady Gaga has two number-one singles with 'Just Dance' and 'Poker Face'</li>
+                    <li class="fragment"><strong>The Dark Knight</strong> is the most popular movie</li>
+                    <li class="fragment"><strong>Lehman Brothers</strong> file for bankruptcy</li>
+                    <li class="fragment"><strong>Spotify</strong> launches in Sweden</li>
+                    <li class="fragment"><strong>Lady Gaga</strong> has number-one singles with <strong>Just Dance</strong> and <strong>Poker Face</strong></li>
                 </ul>
             </section>
             <section>
                 <h2>2008</h2>
             </section>
             <section>
-                <blockquote>Python 3.0 was released on December 3, 2008.</blockquote>
-                <blockquote>It was designed to rectify fundamental design flaws in the language—the changes required could not be implemented while retaining full backwards compatibility with the 2.x series, which necessitated a new major version number.</blockquote>
+                <blockquote><strong>Python 3.0</strong> was released on December 3, <strong>2008</strong></blockquote>
+                <blockquote>It was designed to <strong>rectify fundamental design flaws</strong> in the language—the changes required could not be implemented while retaining full backwards compatibility with the 2.x series, which necessitated a <strong>new major version</strong> number</blockquote>
                 <p>
                     <small>
                         Source: Wikipedia
@@ -100,33 +100,23 @@
                 <iframe src="https://free.timeanddate.com/countdown/i6k6by43/n951/cf100/cm0/cu5/ct4/cs0/cacffffce/co0/cr0/ss0/cacfff/cpc000/pct/tcfff/fn3/fs250/szw576/szh243/iso2020-01-01T00:00:00/bas5/bacf00/pa10" allowTransparency="true" frameborder="0" width="605" height="272"></iframe>
             </section>
             <section>
-                <h2>Python versions & dependencies</h2>
+                <p>Python <strong>versions</strong> and <strong>dependencies</strong></p>
             </section>
             <section>
-                <ul>
-                    <li>One Python environment <strong>per project</strong></li>
-                    <ul>
-                        <li>
-                            <strong>Don't</strong> use the system environment
-                        </li>
-                    </ul>
-                </ul>
+                    <p>One Python environment <strong>per project</strong></p>
+                    <p>! <strong>Don't</strong> use the system environment</p>
             </section>
             <section>
-                <ul>
-                    <li>Dependencies as <strong>unspecific as possible</strong></li>
-                    <ul>
-                        <li>Only direct dependencies</li>
-                        <li>Version numbers only when required</li>
-                    </ul>
-                </ul>
+                    <p>Dependencies as <strong>unspecific as possible</strong></p>
+                    <p>Only direct dependencies<br/>
+                    Version numbers only when required</p>
             </section>
             <section>
                 <p><em>requirements.txt</em><br/> (per project)</p>
                 <br/>
                 <br/>
                 <div class="left">
-                    <pre data-badge="don't" data-badge-fg="red">
+                    <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
                         <code class="plaintext" data-trim data-noescape>
                             boto3==1.9.71
                             botocore==1.12.71
@@ -141,7 +131,7 @@
                     </pre>
                 </div>
                 <div class="right fragment">
-                    <pre data-badge="instead" data-badge-fg="green">
+                    <pre data-badge="&#10004;" data-badge-fg="#859900;">
                         <code class="plaintext" data-trim data-noescape>
                             boto3
                             PyYAML
@@ -167,7 +157,7 @@
         <!-- Conventions  & good naming -->
         <section data-state="changeToBlack">
             <section>
-                <h1>Readability</h1>
+                <h2>Readability</h2>
                 <p>Why is touch-typing useful?</p>
             </section>
             <section>
@@ -187,7 +177,7 @@
                 </pre>
             </section>
             <section>
-                <p>Write once, read many times.</p>
+                <p>Write <strong>once</strong>. Read <strong>many</strong> times.</p>
             </section>
             <section>
                 <pre data-badge="don't" data-badge-fg="red">
@@ -236,8 +226,8 @@
             </section>
             <section data-background="#f7f2d3">
                 <h2>Tip #2</h2>
-                <p>Use language conventions.</p>
-                <p>Make an effort to find good names.</p>
+                <p>Use language conventions</p>
+                <p>Make an effort to find good names</p>
                 <p>Use method extraction to increase readability</p>
             </section>
         </section>
@@ -245,7 +235,7 @@
         <!-- Beauty lies in simplicity -->
         <section>
             <section>
-                <h1>Writing beautiful code</h1>
+                <h2>Writing beautiful code</h2>
                 <p class='fragment'>There is <strong>beauty</strong> in <strong>simplicity</strong>.</p>
             </section>
             <section>
@@ -269,10 +259,10 @@
                 </div>
             </section>
             <section>
-                Often, there is a <strong>pythonic</strong> way
+                There is often a <strong>pythonic</strong> way
             </section>
             <section>
-                <p>Using a loop to create a list</p>
+                <p>Creating a list using a <strong>loop</strong></p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         symbols = '$¢£¥€¤'
@@ -286,7 +276,7 @@
                 </pre>
             </section>
             <section>
-                <p>The same, using <strong>list comprehension</strong></p>
+                <p>Creating a list using <strong>list comprehension</strong></p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         codes = [ord(symbol) for symbol in symbols]
@@ -372,17 +362,17 @@
             </section>
             <section data-background="#f7f2d3">
                 <h2>Tip #3</h2>
-                <p>Try to write code that is both functional and simple.</p>
-                <p>Use Python idioms where you can.</p>
-                <p>Comment only what you cannot say in code.</p>
+                <p>Write code that is both functional and simple</p>
+                <p>Use Python idioms where you can</p>
+                <p>Comment only what you cannot say in code</p>
             </section>
         </section>
 
         <!-- Scope & classes -->
         <section>
             <section>
-                <h1>Classes</h1>
-                A basic 'calculator'
+                <h2>Classes</h2>
+                A <strong>basic</strong> calculator
             </section>
             <section data-transition="slide-in fade-out">
                 <pre>
@@ -465,9 +455,10 @@
                 </pre>
             </section>
             <section>
-                <p>
+                <h4>
                     Using classes to redesign the calculator
-                </p>
+                </h4>
+                <br/>
                 <ul>
                     <li>A class is a <strong>blueprint</strong> for objects</li>
                     <li>An object <strong>encapsulates</strong> data as well as methods</li>
@@ -475,7 +466,7 @@
                 </ul>
             </section>
             <section data-transition="slide-in fade-out">
-                <p>API first...</p>
+                <p>API Design first ...</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         base_ten_calc = <mark>Calculator(base=10)</mark>
@@ -485,7 +476,7 @@
                 </pre>
             </section>
             <section data-transition="fade-in slide-out">
-                <p>API first...</p>
+                <p>API Design first ...</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         base_ten_calc = Calculator(base=10)
@@ -495,7 +486,7 @@
                 </pre>
               </section>
               <section>
-                <p>Different calculators are separate objects...</p>
+                <p>Different calculators are now separate objects ...</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         <mark>base_ten_calc</mark> = Calculator(base=10)
@@ -558,7 +549,7 @@
             </section>
             <section data-transition="slide-in fade-out">
                 <p>
-                    A more real-world example - <br/>
+                    A real-world example - <br/>
                     Syncing a file between SFTP and S3
                 </p>
                 <pre>
@@ -572,7 +563,7 @@
             </section>
             <section data-transition="fade-in">
                 <p>
-                    A more real-world example - <br/>
+                    A real-world example - <br/>
                     Syncing a file between SFTP and S3
                 </p>
                 <pre>
@@ -586,7 +577,7 @@
             </section>
             <section data-transition="fade-in slide-out">
                 <p>
-                    A more real-world example - <br/>
+                    A real-world example - <br/>
                     Syncing a file between SFTP and S3
                 </p>
                 <pre>
@@ -599,7 +590,7 @@
                 </pre>
             </section>
             <section data-transition="slide-in fade-out">
-                <p>Implementation (idea)</p>
+                <p>Implementation Design</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         class Sftp2S3:
@@ -618,7 +609,7 @@
                 </pre>
             </section>
             <section data-transition="fade-in">
-                <p>Implementation (idea)</p>
+                <p>Implementation Design</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         class Sftp2S3:
@@ -637,7 +628,7 @@
                 </pre>
             </section>
             <section data-transition="fade-in slide-out">
-                <p>Implementation (idea)</p>
+                <p>Implementation Design</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         class Sftp2S3:
@@ -656,16 +647,17 @@
                 </pre>
             </section>
             <section>
-                <p>This is just a sneak peek into classes</p>
+                <h4>This was just a sneak peek into classes</h4>
+                <br/>
                 <ul>
                     <li><strong>Re-use</strong> code elsewhere</li>
                     <li>Utilize <strong>inheritance</strong></li>
-                    <li>Implement your own <strong>generators</strong>, <strong>collections</strong>, ...</li>
+                    <li>Implement your own <strong>generators</strong>, <strong>collections</strong> ...</li>
                     <li>And ...</li>
                 </ul>
             </section>
             <section>
-                <p>Unit testing</p>
+                <p>Unit Testing</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         class TestCalculator(TestCase):
@@ -684,8 +676,8 @@
             </section>
             <section data-background="#f7f2d3">
                 <h2>Tip #4</h2>
-                <p>Try to encapsulate behaviour as well as state.</p>
-                <p>Learn how to use classes - they open the door to a whole world of cool features</p>
+                <p>Encapsulate behaviour as well as state</p>
+                <p>Use classes - The door to a whole new world</p>
             </section>
         </section>
 
@@ -699,26 +691,26 @@
                 <img src="resources/faculty.png">
             </section>
             <section>
-                <p>...not much</p>
+                <p>... not much</p>
                 <img src="resources/pycharm.png">
             </section>
             <section>
-                Now, try this in <i><strike>vim</strike> <strike>emacs</strike> <strike>sublime</strike></i> a text editor:
+                Can <i><strike>vim</strike> <strike>emacs</strike> <strike>sublime</strike></i> a text editor do this?
             </section>
             <section>
-                <p>Removing unused imports...</p>
+                <p>Remove unused imports ...</p>
                 <img src="resources/import.png">
             </section>
             <section>
-                <p>Reformatting code according to Python standards...</p>
+                <p>Reformat code according to Python standards ...</p>
                 <img src="resources/reformat.png">
             </section>
             <section>
-                <p>Throwing in a breakpoint...</p>
+                <p>Throw in a breakpoint ...</p>
                 <img src="resources/debugger.png">
             </section>
             <section>
-                <p>Changing a method name across the whole project...</p>
+                <p>Change a method name across the whole project ...</p>
                 <img src="resources/refactor.png">
             </section>
             <section data-background="#f7f2d3">
@@ -908,9 +900,11 @@
         <!-- Outro -->
         <section>
             <section>
-                <h2>That's all I have &#9786;</h2>
-                <p>I hope you find it useful.</p>
-                <p>Alternatively, ...</p>
+                <h2>The End &#9786;</h2>
+                <p class="fragment">I hope you find it useful
+                    <br/>
+                    Or ...
+                </p>
             </section>
             <section>
                 <p>
@@ -923,14 +917,14 @@
             </section>
             <section>
                 <p>
-                    This Talk:
+                    The talk
                     <br />
                     <a href="https://jangroth.github.io/linuxconf2019">jangroth.github.io/linuxconf2019</a>
                 </p>
                 <br/>
                 <br/>
                 <p>
-                    References and further reading:
+                    References and more reading
                     <br/>
                     <a href="https://github.com/jangroth/linuxconf2019">github.com/jangroth/linuxconf2019</a>
                 </p>

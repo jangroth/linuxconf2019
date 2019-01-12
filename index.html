@@ -17,8 +17,8 @@
 
     <link rel="stylesheet" href="reveal/css/reveal.css">
     <link rel="stylesheet" href="reveal/css/theme/black.css" id="theme">
-    <link rel="stylesheet" href="reveal/css/custom.css">
     <link rel="stylesheet" href="reveal/lib/css/solarized-dark.css">
+    <link rel="stylesheet" href="reveal/css/custom.css">
 
     <!-- Printing and PDF exports -->
     <script>
@@ -61,11 +61,11 @@
             <section>
                 <h2>This talk</h2>
                 <p>
-                <ul class="fragment">
-                    <li class="fragment strike">I'm a Python guru, here are 10 Python features - now start using them!</li>
-                    <li class="fragment">Things that I find helpful when writing code Python</li>
-                    <li class="fragment">Don't take notes</li>
-                </ul>
+                    <ul class="fragment">
+                        <li class="fragment strike">I'm a Python guru, here are 10 Python features - now start using them!</li>
+                        <li class="fragment">Things that I find helpful when writing code Python</li>
+                        <li class="fragment">Don't take notes</li>
+                    </ul>
                 </p>
             </section>
         </section>
@@ -161,7 +161,7 @@
                 <p>Why is touch-typing useful?</p>
             </section>
             <section>
-                <p>More conventions means less thinking...</p>
+                <p>More conventions means less thinking ...</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         CONSTANTS_IN_UPPERCASE = 123
@@ -180,13 +180,13 @@
                 <p>Write <strong>once</strong>. Read <strong>many</strong> times.</p>
             </section>
             <section>
-                <pre data-badge="don't" data-badge-fg="red">
+                <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
                     <code class="plaintext" data-trim data-noescape>
                         index.py
                         lambda.py
                     </code>
                 </pre>
-                <pre data-badge="instead" data-badge-fg="green" class="fragment">
+                <pre data-badge="&#10004;" data-badge-fg="#859900;" class="fragment">
                     <code class="plaintext" data-trim data-noescape>
                         rewards-calculation-lambda.py
                     </code>
@@ -194,30 +194,49 @@
             </section>
             <section>
                 <p>Does this comment add value?</p>
-                <pre data-badge="don't" data-badge-fg="red">
+                <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
                     <code class="python" data-trim data-noescape>
                         # uses supplied credentials to create new sftp client
                         def sftp_client(username, password):
                             pass
                     </code>
                 </pre>
-                <pre data-badge="instead" data-badge-fg="green" class="fragment">
+                <pre data-badge="&#10004;" data-badge-fg="#859900;" class="fragment">
                     <code class="python" data-trim data-noescape>
                         def <mark>create_sftp_client</mark>(username, password):
                             pass
                     </code>
                 </pre>
             </section>
-            <section>
-                <p>Well, this comment does...</p>
-                <pre data-badge="don't" data-badge-fg="red">
+            <section data-transition="slide-in fade-out">
+                <p>Well, this comment does ...</p>
+                <pre>
                     <code class="python" data-trim data-noescape>
                         # scale out if less than 3 instances
                         if len(current_instances) < 3:
                             add_instance()
                     </code>
                 </pre>
-                <pre data-badge="instead" data-badge-fg="green" class="fragment">
+            </section>
+            <section data-transition="fade-in slide-out">
+                <p>Well, this comment does ...</p>
+                <pre>
+                    <code class="python" data-trim data-noescape>
+                        <strike># scale out if less than 3 instances</strike>
+                        if len(current_instances) < 3:
+                            add_instance()
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
+                    <code class="python" data-trim data-noescape>
+                        # scale out if less than 3 instances
+                        if len(current_instances) < 3:
+                            add_instance()
+                    </code>
+                </pre>
+                <pre data-badge="&#10004;" data-badge-fg="#859900;">
                     <code class="python" data-trim data-noescape>
                         if <mark>should_scale_out</mark>(current_instances):
                             add_instance()
@@ -240,7 +259,7 @@
             </section>
             <section>
                 <div class="left">
-                    <pre data-badge="don't" data-badge-fg="red">
+                    <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
                         <code class="python" data-trim data-noescape>
                             counter = 0
                             while counter < 5:
@@ -250,7 +269,7 @@
                     </pre>
                 </div>
                 <div class="right fragment">
-                    <pre data-badge="instead" data-badge-fg="green">
+                    <pre data-badge="&#10004;" data-badge-fg="#859900;">
                         <code class="python" data-trim data-noescape>
                             for i in range(5):
                                 print(i)
@@ -284,7 +303,7 @@
                 </pre>
             </section>
             <section>
-                    <pre data-badge="don't" data-badge-fg="red">
+                    <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
                         <code class="python" data-trim data-noescape>
                         symbols = '$¢£¥€¤'
                         codes = []
@@ -292,7 +311,7 @@
                             codes.append(ord(symbol))
                         </code>
                     </pre>
-                <pre data-badge="instead" data-badge-fg="green">
+                <pre data-badge="&#10004;" data-badge-fg="#859900;">
                         <code class="python" data-trim data-noescape>
                             symbols = '$¢£¥€¤'
                             codes = <mark>[ord(symbol) for symbol in symbols]</mark>
@@ -300,21 +319,19 @@
                     </pre>
             </section>
             <section data-transition="fade-in">
-                <p>Commenting every single line is essential...</p>
+                <p>Commenting every single line is essential ...</p>
             </section>
             <section data-transition="fade-in">
                 <p>..if you are writing in Assembler.</p>
                 <pre>
                     <code class="assembler" data-trim data-noescape>
-                        clear:                      ; initialize display...
-                                                    ; call BIOS video driver to
-                              mov       ah,15       ; get current display mode:
-                              int       10h         ; returns AL = mode, and
-                                                    ; AH = no. of columns.
-                              cmp       al,7        ; if we are in graphics modes
-                              je        clear0      ; (modes 4,5,6) then exit
-                              cmp       al,3        ; but if we are in mode 0-3
-                              ja        clear9      ; or 7 then continue.
+                        flash2ram:
+                                lpm                 ;get constant
+                                st      Y+,r0       ;store in SRAM and increment Y-pointer
+                                adiw    ZL,1        ;increment Z-pointer
+                                dec     flashsize
+                                brne    flash2ram   ;if not end of table, loop more
+                                ret
                     </code>
                 </pre>
             </section>
@@ -740,13 +757,13 @@
                 <pre data-badge="pipeline.groovy" class="fragment">
                     <code class="groovy" data-trim data-noescape>
                         ...
-                        SOURCE_ENVS = ['master', 'development']
+                        ENV_SOURCES = ['master', 'development']
                         ...
                     </code>
                 </pre>
                 <pre data-badge="pipeline.groovy.j2" class="fragment">
                     <code class="python" data-trim data-noescape>
-                        SOURCE_ENVS = {{ env.sources }}  # Does not come out as a groovy literal...
+                        ENV_SOURCES = {{ env.sources }}  # Does not come out as a groovy literal...
                     </code>
                 </pre>
             </section>
@@ -763,13 +780,13 @@
                 <pre data-badge="pipeline.groovy">
                     <code class="groovy" data-trim data-noescape>
                         ...
-                        SOURCE_ENVS = ['master', 'development']
+                        ENV_SOURCES = ['master', 'development']
                         ...
                     </code>
                 </pre>
                 <pre data-badge="pipeline.groovy.j2">
                     <code class="python" data-trim data-noescape>
-                        SOURCE_ENVS = {{ env.sources <mark>| to_groovy_list</mark> }} # Custom Jinja filter...
+                        ENV_SOURCES = {{ env.sources <mark>| to_groovy_list</mark> }} # Custom Jinja filter...
                     </code>
                 </pre>
             </section>

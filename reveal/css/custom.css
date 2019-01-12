@@ -15,10 +15,18 @@
   width:50%;
 }
 
+/*
+.reveal mark {
+    opacity: 0.5;
+}
+
 .reveal, .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
   color: #f7f2d3;
 }
 
+.reveal pre code {
+    margin-bottom: -50px;
+}
 
 .reveal strong, .reveal b {
   color: #657b83;
@@ -26,8 +34,9 @@
   letter-spacing:1px;
   font-weight:bold;
 }
+*/
 
-/* debug only
+/*
 body {
   background-image: url("background_720.png")
 }

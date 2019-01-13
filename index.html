@@ -84,7 +84,7 @@
                 </ul>
             </section>
             <section>
-                <h2>2008</h2>
+                <h1>2008</h1>
             </section>
             <section>
                 <blockquote><strong>Python 3.0</strong> was released on December 3, <strong>2008</strong></blockquote>
@@ -96,7 +96,12 @@
                 </p>
             </section>
             <section>
-                <p>Best reason to stop using Python 2.7 now:</p>
+                <p>Python 2</p>
+                <p>vs</p>
+                <p>Python 3</p>
+            </section>
+            <section>
+                <p>Best reason to stop using Python 2.7 <strong>now</strong>:</p>
                 <iframe src="https://free.timeanddate.com/countdown/i6k6by43/n951/cf100/cm0/cu5/ct4/cs0/cacffffce/co0/cr0/ss0/cacfff/cpc000/pct/tcfff/fn3/fs250/szw576/szh243/iso2020-01-01T00:00:00/bas5/bacf00/pa10" allowTransparency="true" frameborder="0" width="605" height="272"></iframe>
             </section>
             <section>
@@ -162,7 +167,7 @@
             </section>
             <section>
                 <p>More conventions means less thinking ...</p>
-                <pre>
+                <pre data-badge="&#10004;" data-badge-fg="#859900;">
                     <code class="python" data-trim data-noescape>
                         CONSTANTS_IN_UPPERCASE = 123
 
@@ -745,20 +750,20 @@
                 <h2>Language Features</h2>
             </section>
             <section data-transition="slide-in fade-out">
-                <p>Using Jinja to generate Jenkins pipelines</p>
-                <pre data-badge="config.yml">
+                <p>Using Jinja templates to generate Jenkins pipelines</p>
+                <pre data-badge="pipeline.groovy">
+                    <code class="groovy" data-trim data-noescape>
+                        ...
+                        ENV_SOURCES = ['master', 'development']
+                        ...
+                    </code>
+                </pre>
+                <pre data-badge="config.yml" class="fragment">
                     <code class="yaml" data-trim data-noescape>
                         env:
                             sources:
                             - master
                             - development
-                    </code>
-                </pre>
-                <pre data-badge="pipeline.groovy" class="fragment">
-                    <code class="groovy" data-trim data-noescape>
-                        ...
-                        ENV_SOURCES = ['master', 'development']
-                        ...
                     </code>
                 </pre>
                 <pre data-badge="pipeline.groovy.j2" class="fragment">
@@ -768,20 +773,20 @@
                 </pre>
             </section>
             <section data-transition="fade-in slide-out">
-                <p>Using Jinja to generate Jenkins pipelines</p>
+                <p>Using Jinja templates to generate Jenkins pipelines</p>
+                <pre data-badge="pipeline.groovy">
+                    <code class="groovy" data-trim data-noescape>
+                        ...
+                        ENV_SOURCES = ['master', 'development']
+                        ...
+                    </code>
+                </pre>
                 <pre data-badge="config.yml">
                     <code class="yaml" data-trim data-noescape>
                         env:
                             sources:
                             - master
                             - development
-                    </code>
-                </pre>
-                <pre data-badge="pipeline.groovy">
-                    <code class="groovy" data-trim data-noescape>
-                        ...
-                        ENV_SOURCES = ['master', 'development']
-                        ...
                     </code>
                 </pre>
                 <pre data-badge="pipeline.groovy.j2">

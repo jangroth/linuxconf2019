@@ -117,7 +117,7 @@
                         Ignore transitive dependencies</p>
             </section>
             <section>
-                <p>Installing <em>boto</em> and <em>pyyaml</em>...</p>
+                <p>Installing <em>boto3</em> and <em>pyyaml</em>...</p>
                 <div class="fragment">
                     <p><em>requirements.txt</em>:</p>
                     <div class="left">
@@ -166,7 +166,10 @@
                 <h2>Readability</h2>
             </section>
             <section>
-                <p>More conventions means less thinking ...</p>
+                <p>Write <strong>once</strong>. Read <strong>many</strong> times.</p>
+            </section>
+            <section>
+                <p>More conventions - less thinking ...</p>
                 <pre data-badge="&#10004;" data-badge-fg="#859900;">
                     <code class="python" data-trim data-noescape>
                         CONSTANTS_IN_UPPERCASE = 123
@@ -182,42 +185,35 @@
                 </pre>
             </section>
             <section>
-                <p>Write <strong>once</strong>. Read <strong>many</strong> times.</p>
-            </section>
-            <section>
                 <p>File names...</p>
-                <div class="fragment">
-                    <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
-                        <code class="bash" data-trim data-noescape>
-                            lambda.py
-                            nexus.py
-                        </code>
-                    </pre>
-                    <pre data-badge="&#10004;" data-badge-fg="#859900;">
-                        <code class="bash" data-trim data-noescape>
-                            rewards-calculation-lambda.py
-                            query-nexus-for-latest-snapshot.py
-                        </code>
-                    </pre>
-                </div>
+                <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
+                    <code class="bash" data-trim data-noescape>
+                        lambda.py
+                        nexus.py
+                    </code>
+                </pre>
+                <pre data-badge="&#10004;" data-badge-fg="#859900;">
+                    <code class="bash" data-trim data-noescape>
+                        rewards-calculation-lambda.py
+                        query-nexus-for-latest-snapshot.py
+                    </code>
+                </pre>
             </section>
             <section>
                 <p>Method names...</p>
-                <div class="fragment">
-                    <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
-                        <code class="python" data-trim data-noescape>
-                            # creates new sftp client
-                            def sftp_client(username, password):
-                                pass
-                        </code>
-                    </pre>
-                    <pre data-badge="&#10004;" data-badge-fg="#859900;">
-                        <code class="python" data-trim data-noescape>
-                            def create_sftp_client(username, password):
-                                pass
-                        </code>
-                    </pre>
-                </div>
+                <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
+                    <code class="python" data-trim data-noescape>
+                        # creates new sftp client
+                        def sftp_client(username, password):
+                            pass
+                    </code>
+                </pre>
+                <pre data-badge="&#10004;" data-badge-fg="#859900;">
+                    <code class="python" data-trim data-noescape>
+                        def create_sftp_client(username, password):
+                            pass
+                    </code>
+                </pre>
             </section>
             <section>
                 <p>Complex code ...</p>
@@ -371,6 +367,31 @@
                 <p>A <strong>basic</strong> calculator</p>
             </section>
             <section data-transition="slide-in fade-out">
+                <p>Calculations on top of a <strong>base</strong> number</p>
+                <pre>
+                    <code class="python" data-trim data-noescape>
+                        base = 10
+
+                        def multiply(number):
+                            return base * number
+
+                        def add(number):
+                            return base + number
+
+                        print(multiply(5))  # ...50
+                        print(add(7))       # ...12
+
+
+
+                        .
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <p>Time passes ...</p>
+            </section>
+            <section data-transition="slide-in fade-out">
+                <p>New requirements are coming in...</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         base = 10
@@ -391,6 +412,7 @@
                 </pre>
             </section>
             <section data-transition="fade-in fade-out">
+                <p>Calculations on top of a <strong>second</strong> number</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         base = 10
@@ -404,13 +426,14 @@
                         print(multiply(5))  # ...50
                         print(add(7))       # ...12
 
-                        base = 13
-                        print(multiply(5))  # ...65
-                        print(add(7))       # ...20
+                        base = 6
+                        print(multiply(5))  # ...30
+                        print(add(7))       # ...13
                     </code>
                 </pre>
             </section>
             <section data-transition="fade-in fade-out">
+                <p>Separation of <strong>state</strong>...</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         <mark>base = 10</mark>
@@ -424,13 +447,14 @@
                         print(multiply(5))  # ...50
                         print(add(7))       # ...12
 
-                        <mark>base = 13</mark>
-                        print(multiply(5))  # ...65
-                        print(add(7))       # ...20
+                        <mark>base = 6</mark>
+                        print(multiply(5))  # ...30
+                        print(add(7))       # ...13
                     </code>
                 </pre>
             </section>
             <section data-transition="fade-in slide-out">
+                <p>...and <strong>behaviour</strong></p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         base = 10
@@ -444,9 +468,9 @@
                         print(multiply(5))  # ...50
                         print(add(7))       # ...12
 
-                        base = 13
-                        print(multiply(5))  # ...65
-                        print(add(7))       # ...20
+                        base = 6
+                        print(multiply(5))  # ...30
+                        print(add(7))       # ...13
                     </code>
                 </pre>
             </section>
@@ -458,16 +482,15 @@
                 <ul>
                     <li>A class is a <strong>blueprint</strong> for objects</li>
                     <li>An object <strong>encapsulates</strong> data as well as methods</li>
-                    <li>Think of objects as <strong>nouns</strong> and of methods as <strong>verbs</strong></li>
                 </ul>
             </section>
             <section data-transition="slide-in fade-out">
                 <p>API Design first ...</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
-                        base_ten_calc = <mark>Calculator(base=10)</mark>
-                        print(base_ten_calc.multiply_by(5))
-                        print(base_ten_calc.add(7))
+                        calculator = <mark>Calculator(base=10)</mark>
+                        print(calculator.multiply_by(5))
+                        print(calculator.add(7))
                     </code>
                 </pre>
             </section>
@@ -475,9 +498,9 @@
                 <p>API Design first ...</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
-                        base_ten_calc = Calculator(base=10)
-                        print(base_ten_calc.<mark>multiply_by(5)</mark>)
-                        print(base_ten_calc.<mark>add(7)</mark>)
+                        calculator = Calculator(base=10)
+                        print(calculator.<mark>multiply_by(5)</mark>)
+                        print(calculator.<mark>add(7)</mark>)
                     </code>
                 </pre>
               </section>
@@ -486,12 +509,12 @@
                 <pre>
                     <code class="python" data-trim data-noescape>
                         <mark>base_ten_calc</mark> = Calculator(base=10)
-                        print(base_ten_calc.multiply_by(5))
-                        print(base_ten_calc.add(7))
+                        print(base_ten_calc.multiply_by(5)) # ...50
+                        print(base_ten_calc.add(7))         # ...17
 
-                        <mark>base_five_calc</mark> = Calculator(base=5)
-                        print(base_five_calc.multiply_by(5))
-                        print(base_five_calc.add(7))
+                        <mark>base_six_calc</mark> = Calculator(base=6)
+                        print(base_six_calc.multiply_by(5)) # ...30
+                        print(base_six_calc.add(7))         # ...13
                     </code>
                 </pre>
             </section>
@@ -726,22 +749,24 @@
                 <p>Using Jinja templates to generate Jenkins pipelines</p>
                 <pre data-badge="pipeline.groovy">
                     <code class="groovy" data-trim data-noescape>
+                        GIT_BRANCHES = ['master', 'development']
                         ...
-                        ENV_SOURCES = ['master', 'development']
-                        ...
+                        for (branch in GIT_BRANCHES) {
+                            ...
+                        }
                     </code>
                 </pre>
                 <pre data-badge="config.yml" class="fragment">
                     <code class="yaml" data-trim data-noescape>
-                        env:
-                            sources:
+                        git:
+                            branches:
                             - master
                             - development
                     </code>
                 </pre>
                 <pre data-badge="pipeline.groovy.j2" class="fragment">
                     <code class="python" data-trim data-noescape>
-                        ENV_SOURCES = {{ env.sources }}  # Does not come out as a groovy literal...
+                        GIT_BRANCHES = {{ git.branches}}  # Does not come out as a groovy literal...
                     </code>
                 </pre>
             </section>
@@ -749,22 +774,24 @@
                 <p>Using Jinja templates to generate Jenkins pipelines</p>
                 <pre data-badge="pipeline.groovy">
                     <code class="groovy" data-trim data-noescape>
+                        GIT_BRANCHES = ['master', 'development']
                         ...
-                        ENV_SOURCES = ['master', 'development']
-                        ...
+                        for (branch in GIT_BRANCHES) {
+                            ...
+                        }
                     </code>
                 </pre>
                 <pre data-badge="config.yml">
                     <code class="yaml" data-trim data-noescape>
-                        env:
-                            sources:
+                        git:
+                            branches:
                             - master
                             - development
                     </code>
                 </pre>
                 <pre data-badge="pipeline.groovy.j2">
                     <code class="python" data-trim data-noescape>
-                        ENV_SOURCES = {{ env.sources <mark>| to_groovy_list</mark> }} # Custom Jinja filter...
+                        GIT_BRANCHES = {{ git.branches <mark>| to_groovy_list</mark> }} # Custom Jinja filter...
                     </code>
                 </pre>
             </section>
@@ -786,6 +813,24 @@
                     </code>
                 </pre>
             </section>
+            <section data-transition="fade-in fade-out">
+                <p>Registering a custom Jinja filter</p>
+                <pre data-badge="render_pipeline1.py">
+                    <code class="python" data-trim data-noescape>
+                        from jinja2 import Environment
+
+                        jinja_env = Environment()  # [...]
+                        jinja_env.filters['quoted'] = quoted
+                        jinja_env.filters['to_groovy_list'] = to_groovy_list
+
+                        def quoted(text):
+                            return "'{}'".format(text)
+
+                        <mark>def to_groovy_list(list):</mark>
+                            <mark>return '[{}]'.format(', '.join(map(quoted, list)))</mark>
+                    </code>
+                </pre>
+            </section>
             <section data-transition="fade-in slide-out">
                 <p>Registering a custom Jinja filter</p>
                 <pre data-badge="render_pipeline1.py">
@@ -799,8 +844,8 @@
                         def quoted(text):
                             return "'{}'".format(text)
 
-                        <mark>def to_groovy_list(list):</mark>
-                            <mark>return '[{}]'.format(', '.join(map(quoted, list)))</mark>
+                        def to_groovy_list(list):
+                            return '[{}]'.format(', '.join(map(quoted, list)))
                     </code>
                 </pre>
             </section>

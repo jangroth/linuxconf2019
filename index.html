@@ -77,10 +77,10 @@
             </section>
             <section>
                 <ul>
-                    <li class="fragment"><strong>The Dark Knight</strong> is the most popular movie</li>
-                    <li class="fragment"><strong>Lehman Brothers</strong> file for bankruptcy</li>
-                    <li class="fragment"><strong>Spotify</strong> launches in Sweden</li>
-                    <li class="fragment"><strong>Lady Gaga</strong> has number-one singles with <strong>Just Dance</strong> and <strong>Poker Face</strong></li>
+                    <li><strong>The Dark Knight</strong> is the most popular movie</li>
+                    <li><strong>Lehman Brothers</strong> file for bankruptcy</li>
+                    <li><strong>Spotify</strong> launches in Sweden</li>
+                    <li><strong>Lady Gaga</strong> has number-one singles with <strong>Just Dance</strong> and <strong>Poker Face</strong></li>
                 </ul>
             </section>
             <section>
@@ -105,7 +105,7 @@
                 <iframe src="https://free.timeanddate.com/countdown/i6k6by43/n951/cf100/cm0/cu5/ct4/cs0/cacffffce/co0/cr0/ss0/cacfff/cpc000/pct/tcfff/fn3/fs250/szw576/szh243/iso2020-01-01T00:00:00/bas5/bacf00/pa10" allowTransparency="true" frameborder="0" width="605" height="272"></iframe>
             </section>
             <section>
-                <p>Python <strong>versions</strong> and <strong>dependencies</strong></p>
+                <p>Python <strong>versions</strong> and project <strong>dependencies</strong></p>
             </section>
             <section>
                     <p>One Python environment <strong>per project</strong></p>
@@ -113,35 +113,36 @@
             </section>
             <section>
                     <p>Project dependencies as <strong>unspecific as possible</strong></p>
-                    <p>Declare only direct dependencies<br/>
-                    Version numbers only when required</p>
+                    <p>Declare <strong>only direct</strong> dependencies<br/>
+                        Ignore transitive dependencies</p>
             </section>
             <section>
-                <p><em>requirements.txt</em><br/> (per project)</p>
-                <br/>
-                <br/>
-                <div class="left">
-                    <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
-                        <code class="bash" data-trim data-noescape>
-                            boto3==1.9.71
-                            botocore==1.12.71
-                            docutils==0.14
-                            jmespath==0.9.3
-                            python-dateutil==2.7.5
-                            PyYAML==3.13
-                            s3transfer==0.1.13
-                            six==1.12.0
-                            urllib3==1.24.1
-                        </code>
-                    </pre>
-                </div>
-                <div class="right fragment">
+                <p>Installing <em>boto</em> and <em>pyyaml</em>...</p>
+                <div class="fragment">
+                    <p><em>requirements.txt</em>:</p>
+                    <div class="left">
+                        <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
+                            <code class="bash" data-trim data-noescape>
+                                boto3==1.9.71
+                                botocore==1.12.71
+                                docutils==0.14
+                                jmespath==0.9.3
+                                python-dateutil==2.7.5
+                                PyYAML==3.13
+                                s3transfer==0.1.13
+                                six==1.12.0
+                                urllib3==1.24.1
+                            </code>
+                        </pre>
+                    </div>
+                <div class="right">
                     <pre data-badge="&#10004;" data-badge-fg="#859900;">
                         <code class="bash" data-trim data-noescape>
                             boto3
                             PyYAML
                         </code>
                     </pre>
+                </div>
                 </div>
             </section>
             <section data-background="#f7f2d3">
@@ -185,57 +186,41 @@
             </section>
             <section>
                 <p>File names...</p>
-                <pre data-badge="&#10008;" data-badge-fg="#dc322f;" class="fragment">
-                    <code class="bash" data-trim data-noescape>
-                        index.py
-                        lambda.py
-                    </code>
-                </pre>
-                <pre data-badge="&#10004;" data-badge-fg="#859900;" class="fragment">
-                    <code class="bash" data-trim data-noescape>
-                        rewards-calculation-lambda.py
-                        query-nexus-for-latest-snapshot.py
-                    </code>
-                </pre>
+                <div class="fragment">
+                    <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
+                        <code class="bash" data-trim data-noescape>
+                            lambda.py
+                            nexus.py
+                        </code>
+                    </pre>
+                    <pre data-badge="&#10004;" data-badge-fg="#859900;">
+                        <code class="bash" data-trim data-noescape>
+                            rewards-calculation-lambda.py
+                            query-nexus-for-latest-snapshot.py
+                        </code>
+                    </pre>
+                </div>
             </section>
             <section>
                 <p>Method names...</p>
-                <pre data-badge="&#10008;" data-badge-fg="#dc322f;" class="fragment">
-                    <code class="python" data-trim data-noescape>
-                        # creates new sftp client
-                        def sftp_client(username, password):
-                            pass
-                    </code>
-                </pre>
-                <pre data-badge="&#10004;" data-badge-fg="#859900;" class="fragment">
-                    <code class="python" data-trim data-noescape>
-                        def <mark>create_sftp_client</mark>(username, password):
-                            pass
-                    </code>
-                </pre>
-            </section>
-            <section data-transition="slide-in fade-out">
-                <p>Complex code ...</p>
-                <pre>
-                    <code class="python" data-trim data-noescape>
-                        # scale out if less than 3 instances
-                        if len(current_instances) < 3:
-                            add_instance()
-                    </code>
-                </pre>
-            </section>
-            <section data-transition="fade-in slide-out">
-                <p>Complex code ...</p>
-                <pre>
-                    <code class="python" data-trim data-noescape>
-                        <strike># scale out if less than 3 instances</strike>
-                        if len(current_instances) < 3:
-                            add_instance()
-                    </code>
-                </pre>
+                <div class="fragment">
+                    <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
+                        <code class="python" data-trim data-noescape>
+                            # creates new sftp client
+                            def sftp_client(username, password):
+                                pass
+                        </code>
+                    </pre>
+                    <pre data-badge="&#10004;" data-badge-fg="#859900;">
+                        <code class="python" data-trim data-noescape>
+                            def create_sftp_client(username, password):
+                                pass
+                        </code>
+                    </pre>
+                </div>
             </section>
             <section>
-                <p>After <strong>method extraction</strong> ...</p>
+                <p>Complex code ...</p>
                 <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
                     <code class="python" data-trim data-noescape>
                         # scale out if less than 3 instances
@@ -245,7 +230,7 @@
                 </pre>
                 <pre data-badge="&#10004;" data-badge-fg="#859900;">
                     <code class="python" data-trim data-noescape>
-                        if <mark>should_scale_out</mark>(current_instances):
+                        if should_scale_out(current_instances):
                             add_instance()
                     </code>
                 </pre>
@@ -277,7 +262,7 @@
                         </code>
                     </pre>
                 </div>
-                <div class="right fragment">
+                <div class="right">
                     <pre data-badge="&#10004;" data-badge-fg="#859900;">
                         <code class="python" data-trim data-noescape>
                             for i in range(5):
@@ -290,41 +275,23 @@
                 There is often a <strong>pythonic</strong> way
             </section>
             <section>
-                <p>Creating a list using a <strong>loop</strong></p>
-                <pre>
-                    <code class="python" data-trim data-noescape>
-                        symbols = '$¢£¥€¤'
-
-                        codes = []
-                        for symbol in symbols:
-                            codes.append(ord(symbol))
-
-                        >>> [36, 162, 163, 165, 8364, 164]
-                    </code>
-                </pre>
-            </section>
-            <section>
-                <p>Creating a list using <strong>list comprehension</strong></p>
-                <pre>
-                    <code class="python" data-trim data-noescape>
-                       symbols = '$¢£¥€¤'
-                       codes = [ord(symbol) for symbol in symbols]
-                    </code>
-                </pre>
-            </section>
-            <section>
+                <p><strong>Loop</strong> vs <strong>List Comprehension</strong></p>
                     <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
                         <code class="python" data-trim data-noescape>
                         symbols = '$¢£¥€¤'
                         codes = []
                         for symbol in symbols:
                             codes.append(ord(symbol))
+
+                        >>> [36, 162, 163, 165, 8364, 164]
                         </code>
                     </pre>
                 <pre data-badge="&#10004;" data-badge-fg="#859900;">
                         <code class="python" data-trim data-noescape>
                             symbols = '$¢£¥€¤'
-                            codes = <mark>[ord(symbol) for symbol in symbols]</mark>
+                            codes = [ord(symbol) for symbol in symbols]
+
+                            >>> [36, 162, 163, 165, 8364, 164]
                         </code>
                     </pre>
             </section>
@@ -680,7 +647,7 @@
                 <br/>
                 <ul>
                     <li><strong>Re-use</strong> code elsewhere</li>
-                    <li>Utilize <strong>inheritance</strong>to implement your own <strong>generators</strong>, <strong>collections</strong> ...</li> 
+                    <li>Utilize <strong>inheritance</strong> to implement your own <strong>generators</strong>, <strong>collections</strong> ...</li>
                     <li>And ...</li>
                 </ul>
             </section>

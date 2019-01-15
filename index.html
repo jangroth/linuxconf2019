@@ -63,7 +63,7 @@
                 <p>
                     <ul class="fragment">
                         <li class="fragment strike">I'm a Python guru, here are 10 Python features - now start using them!</li>
-                        <li class="fragment">Things that I find helpful when writing code Python</li>
+                        <li class="fragment">Things that I find useful when writing code Python</li>
                         <li class="fragment">Don't take notes</li>
                     </ul>
                 </p>
@@ -97,8 +97,8 @@
             </section>
             <section>
                 <p>Python 2</p>
-                <p>vs</p>
-                <p>Python 3</p>
+                <p>or</p>
+                <p>Python 3?</p>
             </section>
             <section>
                 <p>Best reason to stop using Python 2.7 <strong>now</strong>:</p>
@@ -112,8 +112,8 @@
                     <p>! <strong>Don't</strong> use the system environment</p>
             </section>
             <section>
-                    <p>Dependencies as <strong>unspecific as possible</strong></p>
-                    <p>Only direct dependencies<br/>
+                    <p>Project dependencies as <strong>unspecific as possible</strong></p>
+                    <p>Declare only direct dependencies<br/>
                     Version numbers only when required</p>
             </section>
             <section>
@@ -122,7 +122,7 @@
                 <br/>
                 <div class="left">
                     <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
-                        <code class="plaintext" data-trim data-noescape>
+                        <code class="bash" data-trim data-noescape>
                             boto3==1.9.71
                             botocore==1.12.71
                             docutils==0.14
@@ -137,7 +137,7 @@
                 </div>
                 <div class="right fragment">
                     <pre data-badge="&#10004;" data-badge-fg="#859900;">
-                        <code class="plaintext" data-trim data-noescape>
+                        <code class="bash" data-trim data-noescape>
                             boto3
                             PyYAML
                         </code>
@@ -162,8 +162,7 @@
         <!-- Conventions  & good naming -->
         <section data-state="changeToBlack">
             <section>
-                <h2><strong>Readability</strong></h2>
-                <small>&#10004; Versions</small><br/>
+                <h2>Readability</h2>
             </section>
             <section>
                 <p>More conventions means less thinking ...</p>
@@ -187,14 +186,15 @@
             <section>
                 <p>File names...</p>
                 <pre data-badge="&#10008;" data-badge-fg="#dc322f;" class="fragment">
-                    <code class="plaintext" data-trim data-noescape>
+                    <code class="bash" data-trim data-noescape>
                         index.py
                         lambda.py
                     </code>
                 </pre>
                 <pre data-badge="&#10004;" data-badge-fg="#859900;" class="fragment">
-                    <code class="plaintext" data-trim data-noescape>
+                    <code class="bash" data-trim data-noescape>
                         rewards-calculation-lambda.py
+                        query-nexus-for-latest-snapshot.py
                     </code>
                 </pre>
             </section>
@@ -202,7 +202,7 @@
                 <p>Method names...</p>
                 <pre data-badge="&#10008;" data-badge-fg="#dc322f;" class="fragment">
                     <code class="python" data-trim data-noescape>
-                        # uses supplied credentials to create new sftp client
+                        # creates new sftp client
                         def sftp_client(username, password):
                             pass
                     </code>
@@ -261,9 +261,7 @@
         <!-- Beauty lies in simplicity -->
         <section>
             <section>
-                <h2><strong>Writing beautiful code</strong></h2>
-                <small>&#10004; Readability</small><br/>
-                <small>&#10004; Versions</small><br/>
+                <h2>Writing beautiful code</h2>
             </section>
             <section>
                 <p>There is <strong>beauty</strong> in <strong>simplicity</strong>.</p>
@@ -309,7 +307,8 @@
                 <p>Creating a list using <strong>list comprehension</strong></p>
                 <pre>
                     <code class="python" data-trim data-noescape>
-                        codes = [ord(symbol) for symbol in symbols]
+                       symbols = '$¢£¥€¤'
+                       codes = [ord(symbol) for symbol in symbols]
                     </code>
                 </pre>
             </section>
@@ -399,10 +398,7 @@
         <!-- Scope & classes -->
         <section>
             <section>
-                <h2><strong>Classes</strong></h2>
-                <small>&#10004; Beautiful Code</small><br/>
-                <small>&#10004; Readability</small><br/>
-                <small>&#10004; Versions</small><br/>
+                <h2>Classes</h2>
             </section>
             <section>
                 <p>A <strong>basic</strong> calculator</p>
@@ -684,8 +680,7 @@
                 <br/>
                 <ul>
                     <li><strong>Re-use</strong> code elsewhere</li>
-                    <li>Utilize <strong>inheritance</strong></li>
-                    <li>Implement your own <strong>generators</strong>, <strong>collections</strong> ...</li>
+                    <li>Utilize <strong>inheritance</strong>to implement your own <strong>generators</strong>, <strong>collections</strong> ...</li> 
                     <li>And ...</li>
                 </ul>
             </section>
@@ -717,11 +712,7 @@
         <!-- Use an IDE -->
         <section>
             <section>
-                <h2><strong>The right tool for the job</strong></h2>
-                <small>&#10004; Classes</small><br/>
-                <small>&#10004; Beautiful Code</small><br/>
-                <small>&#10004; Readability</small><br/>
-                <small>&#10004; Versions</small><br/>
+                <h2>The right tool for the job</h2>
             </section>
             <section>
                 <p>What does this code print?</p>
@@ -762,12 +753,7 @@
         <!-- Language Features-->
         <section>
             <section>
-                <h2><strong>Language Features</strong></h2>
-                <small>&#10004; Tooling</small><br/>
-                <small>&#10004; Classes</small><br/>
-                <small>&#10004; Beautiful Code</small><br/>
-                <small>&#10004; Readability</small><br/>
-                <small>&#10004; Versions</small><br/>
+                <h2>Language Features</h2>
             </section>
             <section data-transition="slide-in fade-out">
                 <p>Using Jinja templates to generate Jenkins pipelines</p>
@@ -918,7 +904,7 @@
                 </pre>
             </section>
             <section>
-                <p>Using click</p>
+                <p>Using the Click framework</p>
                 <pre data-badge="query-nexus2.py">
                     <code class="python" data-trim data-noescape>
                         @click_command
@@ -942,13 +928,7 @@
         <!-- Outro -->
         <section>
             <section>
-                <h2><strong>The End</strong></h2>
-                <small>Language Features</small><br/>
-                <small>&#10004; Tooling</small><br/>
-                <small>&#10004; Classes</small><br/>
-                <small>&#10004; Beautiful Code</small><br/>
-                <small>&#10004; Readability</small><br/>
-                <small>&#10004; Versions</small><br/>
+                <h2>The End &#9786;</h2>
             </section>
             <section>
                 <p>I hope you find it useful

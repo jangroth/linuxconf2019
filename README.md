@@ -10,6 +10,7 @@ Presentation for [Sysadmin miniconf](http://sysadmin.miniconf.org/) at [linux.co
 * [Virtual Environments](https://python-guide-cn.readthedocs.io/en/latest/dev/virtualenvs.html)
 * [Pipenv: Python Dev Workflow for Humans](https://pipenv.readthedocs.io/en/latest/)
 * [Pipenv & Virtual Environments](https://docs.python-guide.org/dev/virtualenvs/)
+* [Python Application Dependency Management in 2018](https://hynek.me/articles/python-app-deps-2018)
 
 ### Conventions / Good Naming / Beautiful Code
 
@@ -24,7 +25,7 @@ Presentation for [Sysadmin miniconf](http://sysadmin.miniconf.org/) at [linux.co
 
 I know of [PyCharm](https://www.jetbrains.com/pycharm/) and [Visual Studio Code](https://code.visualstudio.com/). The screenshots were taken from PyCharm.
 
-### Python++
+### Language Features
 
 * Jinja's [custom filters](http://jinja.pocoo.org/docs/2.10/api/#writing-filters)
 * Beautiful CLIs with [Click](https://click.palletsprojects.com/en/7.x/) 

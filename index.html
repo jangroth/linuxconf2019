@@ -164,24 +164,7 @@
         <section data-state="changeToBlack">
             <section>
                 <h2>Readability</h2>
-            </section>
-            <section>
                 <p>Write <strong>once</strong>. Read <strong>many</strong> times.</p>
-            </section>
-            <section>
-                <p>File names...</p>
-                <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
-                    <code class="bash" data-trim data-noescape>
-                        lambda.py
-                        nexus.py
-                    </code>
-                </pre>
-                <pre data-badge="&#10004;" data-badge-fg="#859900;">
-                    <code class="bash" data-trim data-noescape>
-                        rewards-calculation-lambda.py
-                        query-nexus-for-latest-snapshot.py
-                    </code>
-                </pre>
             </section>
             <section>
                 <p>More conventions - less thinking ...</p>
@@ -196,6 +179,21 @@
 
                         def all_use_kebap_case():
                             pass
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <p>File names...</p>
+                <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
+                    <code class="bash" data-trim data-noescape>
+                        lambda.py
+                        nexus.py
+                    </code>
+                </pre>
+                <pre data-badge="&#10004;" data-badge-fg="#859900;">
+                    <code class="bash" data-trim data-noescape>
+                        rewards-calculation-lambda.py
+                        query-nexus-for-latest-snapshot.py
                     </code>
                 </pre>
             </section>
@@ -243,11 +241,10 @@
         <section>
             <section>
                 <h2>Writing beautiful code</h2>
-            </section>
-            <section>
                 <p>There is <strong>beauty</strong> in <strong>simplicity</strong>.</p>
             </section>
             <section>
+                <p>Using the language construct that fits best</p>
                 <div class="left">
                     <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
                         <code class="python" data-trim data-noescape>
@@ -380,10 +377,6 @@
 
                         print(multiply(5))  # ...50
                         print(add(7))       # ...12
-
-
-
-                        .
                     </code>
                 </pre>
             </section>
@@ -391,7 +384,7 @@
                 <p>Time passes ...</p>
             </section>
             <section data-transition="slide-in fade-out">
-                <p>New requirements are coming in...</p>
+                <p>... a new requirement comes in:</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         base = 10
@@ -433,7 +426,7 @@
                 </pre>
             </section>
             <section data-transition="fade-in fade-out">
-                <p>Separation of <strong>state</strong>...</p>
+                <p>Problem: Separation of <strong>state</strong>...</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         <mark>base = 10</mark>
@@ -476,7 +469,7 @@
             </section>
             <section>
                 <h4>
-                    Using classes to redesign the calculator
+                    Using <strong>classes</strong> to redesign the calculator
                 </h4>
                 <br/>
                 <ul>
@@ -501,20 +494,6 @@
                         calculator = Calculator(base=10)
                         print(calculator.<mark>multiply_by(5)</mark>)
                         print(calculator.<mark>add(7)</mark>)
-                    </code>
-                </pre>
-              </section>
-              <section>
-                <p>Different calculators are now separate objects ...</p>
-                <pre>
-                    <code class="python" data-trim data-noescape>
-                        <mark>base_ten_calc</mark> = Calculator(base=10)
-                        print(base_ten_calc.multiply_by(5)) # ...50
-                        print(base_ten_calc.add(7))         # ...17
-
-                        <mark>base_six_calc</mark> = Calculator(base=6)
-                        print(base_six_calc.multiply_by(5)) # ...30
-                        print(base_six_calc.add(7))         # ...13
                     </code>
                 </pre>
             </section>
@@ -563,6 +542,20 @@
 
                             def add(self, number):
                                 return self.base + number
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <p>Different calculators are now separate objects ...</p>
+                <pre>
+                    <code class="python" data-trim data-noescape>
+                        <mark>base_ten_calc</mark> = Calculator(base=10)
+                        print(base_ten_calc.multiply_by(5)) # ...50
+                        print(base_ten_calc.add(7))         # ...17
+
+                        <mark>base_six_calc</mark> = Calculator(base=6)
+                        print(base_six_calc.multiply_by(5)) # ...30
+                        print(base_six_calc.add(7))         # ...13
                     </code>
                 </pre>
             </section>

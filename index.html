@@ -154,7 +154,6 @@
                     <ul>
                         <li>venv</li>
                         <li>pipenv</li>
-                        <li>docker & venv</li>
                     </ul>
                 </ul>
             </section>
@@ -177,7 +176,7 @@
                         def methods_are_lowercase_too():
                             pass
 
-                        def all_use_kebap_case():
+                        def all_use_snake_case():
                             pass
                     </code>
                 </pre>
@@ -197,7 +196,7 @@
                     </code>
                 </pre>
             </section>
-            <section>
+            <section data-transition="slide-in fade-out">
                 <p>Method names...</p>
                 <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
                     <code class="python" data-trim data-noescape>
@@ -213,7 +212,23 @@
                     </code>
                 </pre>
             </section>
-            <section>
+            <section data-transition="fade-in slide-out">
+                <p>Method names...</p>
+                <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
+                    <code class="python" data-trim data-noescape>
+                        # creates new sftp client
+                        def sftp_client(username, password):
+                            pass
+                    </code>
+                </pre>
+                <pre data-badge="&#10004;" data-badge-fg="#859900;">
+                    <code class="python" data-trim data-noescape>
+                        def <mark>create_sftp_client</mark>(username, password):
+                            pass
+                    </code>
+                </pre>
+            </section>
+            <section data-transition="slide-in fade-out">
                 <p>Complex code ...</p>
                 <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
                     <code class="python" data-trim data-noescape>
@@ -225,6 +240,22 @@
                 <pre data-badge="&#10004;" data-badge-fg="#859900;">
                     <code class="python" data-trim data-noescape>
                         if should_scale_out(current_instances):
+                            add_instance()
+                    </code>
+                </pre>
+            </section>
+            <section data-transition="fade-in slide-out">
+                <p>Complex code ...</p>
+                <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
+                    <code class="python" data-trim data-noescape>
+                        # scale out if less than 3 instances
+                        if len(current_instances) < 3:
+                            add_instance()
+                    </code>
+                </pre>
+                <pre data-badge="&#10004;" data-badge-fg="#859900;">
+                    <code class="python" data-trim data-noescape>
+                        if <mark>should_scale_out</mark>(current_instances):
                             add_instance()
                     </code>
                 </pre>
@@ -403,9 +434,10 @@
             </section>
             <section>
                 <p>Time passes ...</p>
+                <p class="fragment">... new requirements are coming in:</p>
             </section>
             <section data-transition="slide-in fade-out">
-                <p>... a new requirement comes in:</p>
+                <p>Calculations on top of a <strong>second</strong> number</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
                         base = 10
@@ -467,7 +499,7 @@
                     </code>
                 </pre>
             </section>
-            <section data-transition="fade-in slide-out">
+            <section data-transition="fade-in fade-out">
                 <p>...and <strong>behaviour</strong></p>
                 <pre>
                     <code class="python" data-trim data-noescape>
@@ -484,6 +516,27 @@
 
                         base = 6
                         print(multiply(5))  # ...30
+                        print(add(7))       # ...13
+                    </code>
+                </pre>
+            </section>
+            <section data-transition="fade-in slide-out">
+                <p>...make the code <strong>much harder</strong> to understand</p>
+                <pre>
+                    <code class="python" data-trim data-noescape>
+                        base = 10
+
+                        def multiply(number):
+                            return base * number
+
+                        def add(number):
+                            return base + number
+
+                        <mark>print(multiply(5))  # ...50</mark>
+                        print(add(7))       # ...12
+
+                        base = 6
+                        <mark>print(multiply(5))  # ...30</mark>
                         print(add(7))       # ...13
                     </code>
                 </pre>
@@ -582,16 +635,30 @@
                     </code>
                 </pre>
             </section>
-            <section>
+            <section data-transition="slide-in fade-out">
                 <p>Different calculators are now separate objects ...</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
-                        <mark>base_ten_calc</mark> = Calculator(base=10)
+                        <mark>base_ten_calc = Calculator(base=10)</mark>
                         print(base_ten_calc.multiply_by(5)) # ...50
                         print(base_ten_calc.add(7))         # ...17
 
-                        <mark>base_six_calc</mark> = Calculator(base=6)
+                        <mark>base_six_calc = Calculator(base=6)</mark>
                         print(base_six_calc.multiply_by(5)) # ...30
+                        print(base_six_calc.add(7))         # ...13
+                    </code>
+                </pre>
+            </section>
+            <section data-transition="fade-in slide-out">
+                <p>Different calculators are now separate objects ...</p>
+                <pre>
+                    <code class="python" data-trim data-noescape>
+                        base_ten_calc = Calculator(base=10)
+                        <mark>print(base_ten_calc.multiply_by(5)) # ...50</mark>
+                        print(base_ten_calc.add(7))         # ...17
+
+                        base_six_calc = Calculator(base=6)
+                        <mark>print(base_six_calc.multiply_by(5)) # ...30</mark>
                         print(base_six_calc.add(7))         # ...13
                     </code>
                 </pre>

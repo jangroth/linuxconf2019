@@ -62,7 +62,7 @@
                 <h2>This talk</h2>
                 <p>
                     <ul class="fragment">
-                        <li class="fragment strike">I'm a Python guru, here are 10 Python features - now start using them!</li>
+                        <li class="fragment strike">Here are 10 Python features - now start using them!</li>
                         <li class="fragment">Things that I find useful when writing code in Python</li>
                         <li class="fragment">Don't take notes</li>
                     </ul>
@@ -111,46 +111,46 @@
                     <p>One Python environment <strong>per project</strong></p>
                     <p>! <strong>Don't</strong> use the system environment</p>
             </section>
-            <section>
-                <p>Installing <em>boto3</em> and <em>pyyaml</em>...</p>
-                <div class="fragment">
-                    <p><em>requirements.txt</em>:</p>
-                    <div class="left">
-                        <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
-                            <code class="bash" data-trim data-noescape>
-                                boto3==1.9.71
-                                botocore==1.12.71
-                                docutils==0.14
-                                jmespath==0.9.3
-                                python-dateutil==2.7.5
-                                PyYAML==3.13
-                                s3transfer==0.1.13
-                                six==1.12.0
-                                urllib3==1.24.1
-                            </code>
-                        </pre>
-                    </div>
-                <div class="right">
-                    <pre data-badge="&#10004;" data-badge-fg="#859900;">
-                        <code class="bash" data-trim data-noescape>
-                            boto3
-                            PyYAML
-                        </code>
-                    </pre>
-                </div>
-                </div>
-            </section>
-            <section>
-                    <p>Project dependencies as <strong>unspecific as possible</strong></p>
-                    <p>Declare <strong>only direct</strong> dependencies<br/>
-                        Ignore transitive dependencies</p>
-            </section>
+            <!--<section>-->
+                <!--<p>Installing <em>boto3</em> and <em>pyyaml</em>...</p>-->
+                <!--<div class="fragment">-->
+                    <!--<p><em>requirements.txt</em>:</p>-->
+                    <!--<div class="left">-->
+                        <!--<pre data-badge="&#10008;" data-badge-fg="#dc322f;">-->
+                            <!--<code class="bash" data-trim data-noescape>-->
+                                <!--boto3==1.9.71-->
+                                <!--botocore==1.12.71-->
+                                <!--docutils==0.14-->
+                                <!--jmespath==0.9.3-->
+                                <!--python-dateutil==2.7.5-->
+                                <!--PyYAML==3.13-->
+                                <!--s3transfer==0.1.13-->
+                                <!--six==1.12.0-->
+                                <!--urllib3==1.24.1-->
+                            <!--</code>-->
+                        <!--</pre>-->
+                    <!--</div>-->
+                <!--<div class="right">-->
+                    <!--<pre data-badge="&#10004;" data-badge-fg="#859900;">-->
+                        <!--<code class="bash" data-trim data-noescape>-->
+                            <!--boto3-->
+                            <!--PyYAML-->
+                        <!--</code>-->
+                    <!--</pre>-->
+                <!--</div>-->
+                <!--</div>-->
+            <!--</section>-->
+            <!--<section>-->
+                    <!--<p>Project dependencies as <strong>unspecific as possible</strong></p>-->
+                    <!--<p>Declare <strong>only direct</strong> dependencies<br/>-->
+                        <!--Ignore transitive dependencies</p>-->
+            <!--</section>-->
             <section data-background="#f7f2d3">
                 <h2>Tip #1</h2>
                 <p>Stay ahead of Python's versions</p>
                 <ul>
                     <li>Use Python 3</li>
-                    <li>Use a tool to manage dependencies</li>
+                    <li>Use a tool to manage environments</li>
                     <ul>
                         <li>venv</li>
                         <li>pipenv</li>
@@ -193,7 +193,7 @@
                 <pre data-badge="&#10004;" data-badge-fg="#859900;">
                     <code class="bash" data-trim data-noescape>
                         rewards-calculation-lambda.py
-                        query-nexus-for-latest-snapshot.py
+                        query-nexus-for-latest-snapshot-version.py
                     </code>
                 </pre>
             </section>
@@ -267,7 +267,7 @@
             <section>
                 There is often a <strong>pythonic</strong> way
             </section>
-            <section>
+            <section  data-transition="slide-in fade-out">
                 <p><strong>Loop</strong> vs <strong>List Comprehension</strong></p>
                     <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
                         <code class="python" data-trim data-noescape>
@@ -283,6 +283,27 @@
                         <code class="python" data-trim data-noescape>
                             symbols = '$¢£¥€¤'
                             codes = [ord(symbol) for symbol in symbols]
+
+                            >>> [36, 162, 163, 165, 8364, 164]
+                        </code>
+                    </pre>
+            </section>
+            <section  data-transition="fade-in slide-out">
+                <p><strong>Loop</strong> vs <strong>List Comprehension</strong></p>
+                    <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
+                        <code class="python" data-trim data-noescape>
+                        symbols = '$¢£¥€¤'
+                        codes = []
+                        for symbol in symbols:
+                            codes.append(ord(symbol))
+
+                        >>> [36, 162, 163, 165, 8364, 164]
+                        </code>
+                    </pre>
+                <pre data-badge="&#10004;" data-badge-fg="#859900;">
+                        <code class="python" data-trim data-noescape>
+                            symbols = '$¢£¥€¤'
+                            codes = <mark>[ord(symbol) for symbol in symbols]</mark>
 
                             >>> [36, 162, 163, 165, 8364, 164]
                         </code>
@@ -309,7 +330,7 @@
                 <p>In Python not so much.</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
-                        def pfPasswordHash(arg):
+                        def create_password_hash(arg):
                             # Randomise Salt
                             salt = os.urandom(6)
                             # Convert String to Byte Array
@@ -330,7 +351,7 @@
                 <p>In Python not so much.</p>
                 <pre>
                     <code class="python" data-trim data-noescape>
-                        def pfPasswordHash(arg):
+                        def create_password_hash(arg):
                             <strike># Randomise Salt</strike>
                             salt = os.urandom(6)
                             <strike class="strike"># Convert String to Byte Array</strike>
@@ -502,6 +523,22 @@
                 <pre>
                     <code class="python" data-trim data-noescape>
                         class Calculator:
+                            def __init__(self, base):
+                                self.base = base
+
+                            def multiply_by(self, number):
+                                return self.base * number
+
+                            def add(self, number):
+                                return self.base + number
+                    </code>
+                </pre>
+            </section>
+            <section data-transition="fade-in fade-out">
+                <p>Implementation</p>
+                <pre>
+                    <code class="python" data-trim data-noescape>
+                        <mark>class Calculator:</mark>
                             def __init__(self, base):
                                 self.base = base
 
@@ -759,7 +796,7 @@
                 </pre>
                 <pre data-badge="pipeline.groovy.j2" class="fragment">
                     <code class="python" data-trim data-noescape>
-                        GIT_BRANCHES = {{ git.branches}}  # Does not come out as a groovy literal...
+                        GIT_BRANCHES = {{ git.branches }}  # Does not come out as a groovy literal...
                     </code>
                 </pre>
             </section>
@@ -943,7 +980,7 @@
             </section>
             <section>
                 <p>
-                    Tim Peters, Python core developer:
+                    <strong>Tim Peters</strong>, Python core developer:
                 </p>
                 <blockquote>
                     Here's the plan:<br/>

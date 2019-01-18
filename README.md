@@ -56,4 +56,4 @@ It's beautiful.
 
 The Python 2.7 countdown comes from [timeanddate.com](https://www.timeanddate.com/clocks/freecountdown.html), inspired by [python clock]()https://pythonclock.org/)
 
-The List Comprehension example was taken from [Fluent Python: Clear, Concise, and Effective Programming](https://python-3-patterns-idioms-test.readthedocs.io/en/latest/Comprehensions.html) by Luciano Ramalho.
+The List Comprehension example was taken from [Fluent Python: Clear, Concise, and Effective Programming](http://shop.oreilly.com/product/0636920032519.do) by Luciano Ramalho.

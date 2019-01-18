@@ -25,7 +25,7 @@ Presentation for [Sysadmin miniconf](http://sysadmin.miniconf.org/) at [linux.co
 
 ### Using an IDE
 
-I know of [PyCharm](https://www.jetbrains.com/pycharm/) and [Visual Studio Code](https://code.visualstudio.com/). The screenshots were taken from PyCharm.
+Most people I know use either [PyCharm](https://www.jetbrains.com/pycharm/) or [Visual Studio Code](https://code.visualstudio.com/). The screenshots were taken from PyCharm.
 
 ### Language Features
 
@@ -55,3 +55,5 @@ This presentation uses [reveal.js](https://github.com/hakimel/reveal.js) with th
 It's beautiful.
 
 The Python 2.7 countdown comes from [timeanddate.com](https://www.timeanddate.com/clocks/freecountdown.html), inspired by [python clock]()https://pythonclock.org/)
+
+The List Comprehension example was taken from [Fluent Python: Clear, Concise, and Effective Programming](https://python-3-patterns-idioms-test.readthedocs.io/en/latest/Comprehensions.html) by Luciano Ramalho.

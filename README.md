@@ -35,7 +35,7 @@ Most people I know use either [PyCharm](https://www.jetbrains.com/pycharm/) or [
 
 ## More Python
 
-Some links to resources to 
+Some links to resources to see more Python code on a regular base:
 
 ### Regular Newsletters
 * [Python Weekly](https://www.pythonweekly.com/)
@@ -44,7 +44,7 @@ Some links to resources to
 
 ### Coding Challenges
 * [The Python Challenge](http://www.pythonchallenge.com/)
-* [Advent of Code](https://adventofcode.com/) (look at previous challenges)
+* [Advent of Code](https://adventofcode.com/) (also look at previous challenges)
 
 ## Credits
 
@@ -52,8 +52,8 @@ This presentation uses [reveal.js](https://github.com/hakimel/reveal.js) with th
 * [Elapsed-Time-Bar](https://github.com/tkrkt/reveal.js-elapsed-time-bar) 
 * [Badges](https://github.com/ThomasWeinert/reveal-badges) 
   
-It's beautiful.
+It's a beautiful framework.
 
-The Python 2.7 countdown comes from [timeanddate.com](https://www.timeanddate.com/clocks/freecountdown.html), inspired by [python clock]()https://pythonclock.org/)
+The Python 2.7 countdown comes from [timeanddate.com](https://www.timeanddate.com/clocks/freecountdown.html), inspired by [python clock](https://pythonclock.org/).
 
 The List Comprehension example was taken from [Fluent Python: Clear, Concise, and Effective Programming](http://shop.oreilly.com/product/0636920032519.do) by Luciano Ramalho.

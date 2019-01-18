@@ -16,10 +16,11 @@ Presentation for [Sysadmin miniconf](http://sysadmin.miniconf.org/) at [linux.co
 
 * [The Hitchhiker's Guide to Python / Code Style](https://docs.python-guide.org/writing/style/)
 * [How to Write Beautiful Python Code With PEP 8](https://realpython.com/python-pep8/)
+* TODO: List comprehension
 
 ### Scope And Classes
 
-* [Introduction to Python](http://introtopython.org/classes.html)
+* [Introduction to Python Classes](http://introtopython.org/classes.html)
 
 ### Using an IDE
 
@@ -27,23 +28,26 @@ I know of [PyCharm](https://www.jetbrains.com/pycharm/) and [Visual Studio Code]
 
 ### Language Features
 
+* TODO: Decorators
 * Jinja's [custom filters](http://jinja.pocoo.org/docs/2.10/api/#writing-filters)
 * Beautiful CLIs with [Click](https://click.palletsprojects.com/en/7.x/) 
 
 ## More Python
 
-### Newsletters
+Some links to resources to 
+
+### Regular Newsletters
 * [Python Weekly](https://www.pythonweekly.com/)
 * [PyCoders Weekly](https://pycoders.com/)
 * [Python Tricks from Real Python](https://realpython.com/)
 
-### Coding
+### Coding Challenges
 * [The Python Challenge](http://www.pythonchallenge.com/)
 * [Advent of Code](https://adventofcode.com/) (look at previous challenges)
 
 ## Credits
 
-I'm using [reveal.js](https://github.com/hakimel/reveal.js) with these plugins:
+This presentation uses [reveal.js](https://github.com/hakimel/reveal.js) with these plugins:
 * [Elapsed-Time-Bar](https://github.com/tkrkt/reveal.js-elapsed-time-bar) 
 * [Badges](https://github.com/ThomasWeinert/reveal-badges) 
   

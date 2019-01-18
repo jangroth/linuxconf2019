@@ -16,7 +16,8 @@ Presentation for [Sysadmin miniconf](http://sysadmin.miniconf.org/) at [linux.co
 
 * [The Hitchhiker's Guide to Python / Code Style](https://docs.python-guide.org/writing/style/)
 * [How to Write Beautiful Python Code With PEP 8](https://realpython.com/python-pep8/)
-* TODO: List comprehension
+* [Understanding List Comprehensions in Python 3](https://www.digitalocean.com/community/tutorials/understanding-list-comprehensions-in-python-3)
+* [Comprehensions](https://python-3-patterns-idioms-test.readthedocs.io/en/latest/Comprehensions.html)
 
 ### Scope And Classes
 
@@ -28,7 +29,7 @@ I know of [PyCharm](https://www.jetbrains.com/pycharm/) and [Visual Studio Code]
 
 ### Language Features
 
-* TODO: Decorators
+* [Primer on Python Decorators](https://realpython.com/primer-on-python-decorators/)
 * Jinja's [custom filters](http://jinja.pocoo.org/docs/2.10/api/#writing-filters)
 * Beautiful CLIs with [Click](https://click.palletsprojects.com/en/7.x/) 
 

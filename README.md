@@ -3,6 +3,17 @@ Presentation for [Sysadmin miniconf](http://sysadmin.miniconf.org/) at [linux.co
 
 ([Online](https://jangroth.github.io/linuxconf2019/) on github.io)
 
+## Talk Abstract
+
+Python is a great language for DevOps tasks. It’s easy to use for automation and offers an end-to-end range of tooling for 
+managing infrastructure on-premise and in the cloud. Scripts are quickly implemented and new features easily rolled out. But 
+what if complexity grows and all of the sudden you find yourself in a complete mess? How do you add a new feature or fix a 
+bug in a script that you struggle to understand because it was written months ago? And do you sometimes see someone else’s 
+code that you like but can't always put your finger on the magic ingredient? This talk is aimed at you if you are reasonably 
+confident reading Python code and want to discover and improve beyond the basics. I'll provide you with ideas and suggestions 
+that will help you stay on top of your coding and will bring it to the next level: Clean code which is easier to understand, 
+more functional, testable and beautiful. 
+
 ## References and further reading
 
 ### Python 3 / venv / pipenv

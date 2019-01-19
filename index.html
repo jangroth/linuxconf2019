@@ -196,38 +196,38 @@
                     </code>
                 </pre>
             </section>
-            <section data-transition="slide-in fade-out">
-                <p>Method names...</p>
-                <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
-                    <code class="python" data-trim data-noescape>
-                        # creates new sftp client
-                        def sftp_client(username, password):
-                            pass
-                    </code>
-                </pre>
-                <pre data-badge="&#10004;" data-badge-fg="#859900;">
-                    <code class="python" data-trim data-noescape>
-                        def create_sftp_client(username, password):
-                            pass
-                    </code>
-                </pre>
-            </section>
-            <section data-transition="fade-in slide-out">
-                <p>Method names...</p>
-                <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
-                    <code class="python" data-trim data-noescape>
-                        # creates new sftp client
-                        def sftp_client(username, password):
-                            pass
-                    </code>
-                </pre>
-                <pre data-badge="&#10004;" data-badge-fg="#859900;">
-                    <code class="python" data-trim data-noescape>
-                        def <mark>create_sftp_client</mark>(username, password):
-                            pass
-                    </code>
-                </pre>
-            </section>
+            <!--<section data-transition="slide-in fade-out">-->
+                <!--<p>Method names...</p>-->
+                <!--<pre data-badge="&#10008;" data-badge-fg="#dc322f;">-->
+                    <!--<code class="python" data-trim data-noescape>-->
+                        <!--# creates new sftp client-->
+                        <!--def sftp_client(username, password):-->
+                            <!--pass-->
+                    <!--</code>-->
+                <!--</pre>-->
+                <!--<pre data-badge="&#10004;" data-badge-fg="#859900;">-->
+                    <!--<code class="python" data-trim data-noescape>-->
+                        <!--def create_sftp_client(username, password):-->
+                            <!--pass-->
+                    <!--</code>-->
+                <!--</pre>-->
+            <!--</section>-->
+            <!--<section data-transition="fade-in slide-out">-->
+                <!--<p>Method names...</p>-->
+                <!--<pre data-badge="&#10008;" data-badge-fg="#dc322f;">-->
+                    <!--<code class="python" data-trim data-noescape>-->
+                        <!--# creates new sftp client-->
+                        <!--def sftp_client(username, password):-->
+                            <!--pass-->
+                    <!--</code>-->
+                <!--</pre>-->
+                <!--<pre data-badge="&#10004;" data-badge-fg="#859900;">-->
+                    <!--<code class="python" data-trim data-noescape>-->
+                        <!--def <mark>create_sftp_client</mark>(username, password):-->
+                            <!--pass-->
+                    <!--</code>-->
+                <!--</pre>-->
+            <!--</section>-->
             <section data-transition="slide-in fade-out">
                 <p>Complex code ...</p>
                 <pre data-badge="&#10008;" data-badge-fg="#dc322f;">
@@ -577,13 +577,13 @@
                     <code class="python" data-trim data-noescape>
                         class Calculator:
                             def __init__(self, base):
-                                self.base = base
+                                self.calc_base = base
 
                             def multiply_by(self, number):
-                                return self.base * number
+                                return self.calc_base * number
 
                             def add(self, number):
-                                return self.base + number
+                                return self.calc_base + number
                     </code>
                 </pre>
             </section>
@@ -593,13 +593,13 @@
                     <code class="python" data-trim data-noescape>
                         <mark>class Calculator:</mark>
                             def __init__(self, base):
-                                self.base = base
+                                self.calc_base = base
 
                             def multiply_by(self, number):
-                                return self.base * number
+                                return self.calc_base * number
 
                             def add(self, number):
-                                return self.base + number
+                                return self.calc_base + number
                     </code>
                 </pre>
             </section>
@@ -609,13 +609,13 @@
                     <code class="python" data-trim data-noescape>
                         class Calculator:
                             <mark>def __init__(self, base):</mark>
-                                <mark>self.base = base</mark>
+                                <mark>self.calc_base = base</mark>
 
                             def multiply_by(self, number):
-                                return self.base * number
+                                return self.calc_base * number
 
                             def add(self, number):
-                                return self.base + number
+                                return self.calc_base + number
                     </code>
                 </pre>
             </section>
@@ -625,13 +625,13 @@
                     <code class="python" data-trim data-noescape>
                         class Calculator:
                             def __init__(self, base):
-                                self.base = base
+                                self.calc_base = base
 
                             <mark>def multiply_by(self, number):</mark>
-                                <mark>return self.base * number</mark>
+                                <mark>return self.calc_base * number</mark>
 
                             def add(self, number):
-                                return self.base + number
+                                return self.calc_base + number
                     </code>
                 </pre>
             </section>
@@ -711,8 +711,8 @@
                     <code class="python" data-trim data-noescape>
                         class Sftp2S3:
                             def __init__(self, server_name, bucket_name):
-                                self.bucket = boto3.resource('s3').Bucket(bucket_name)
                                 self.sftp_server = self._init_sftp(server_name)
+                                self.bucket = boto3.resource('s3').Bucket(bucket_name)
 
                             def _init_sftp(self, server_name): pass
                             def _needs_sync(self, file_name): pass
@@ -730,8 +730,8 @@
                     <code class="python" data-trim data-noescape>
                         class Sftp2S3:
                             <mark>def __init__(self, server_name, bucket_name):</mark>
-                                <mark>self.bucket = boto3.resource('s3').Bucket(bucket_name)</mark>
                                 <mark>self.sftp_server = self._init_sftp(server_name)</mark>
+                                <mark>self.bucket = boto3.resource('s3').Bucket(bucket_name)</mark>
 
                             def _init_sftp(self, server_name): pass
                             def _needs_sync(self, file_name): pass
@@ -749,8 +749,8 @@
                     <code class="python" data-trim data-noescape>
                         class Sftp2S3:
                             def __init__(self, server_name, bucket_name):
-                                self.bucket = boto3.resource('s3').Bucket(bucket_name)
                                 self.sftp_server = self._init_sftp(server_name)
+                                self.bucket = boto3.resource('s3').Bucket(bucket_name)
 
                             def _init_sftp(self, server_name): pass
                             def _needs_sync(self, file_name): pass
@@ -763,7 +763,7 @@
                 </pre>
             </section>
             <section>
-                <h4>This was just a sneak peek into classes</h4>
+                <h4>This is just a sneak peek into classes</h4>
                 <br/>
                 <ul>
                     <li><strong>Re-use</strong> code elsewhere</li>
@@ -838,201 +838,201 @@
         </section>
 
         <!-- Language Features-->
-        <section>
-            <section>
-                <h2>Language Features</h2>
-            </section>
-            <section data-transition="slide-in fade-out">
-                <p>Using Jinja templates to generate Jenkins pipelines</p>
-                <pre data-badge="pipeline.groovy">
-                    <code class="groovy" data-trim data-noescape>
-                        GIT_BRANCHES = ['master', 'development']
-                        ...
-                        for (branch in GIT_BRANCHES) {
-                            ...
-                        }
-                    </code>
-                </pre>
-                <pre data-badge="config.yml" class="fragment">
-                    <code class="yaml" data-trim data-noescape>
-                        git:
-                            branches:
-                            - master
-                            - development
-                    </code>
-                </pre>
-                <pre data-badge="pipeline.groovy.j2" class="fragment">
-                    <code class="python" data-trim data-noescape>
-                        GIT_BRANCHES = {{ git.branches }}  # Does not come out as a groovy literal...
-                    </code>
-                </pre>
-            </section>
-            <section data-transition="fade-in slide-out">
-                <p>Using Jinja templates to generate Jenkins pipelines</p>
-                <pre data-badge="pipeline.groovy">
-                    <code class="groovy" data-trim data-noescape>
-                        GIT_BRANCHES = ['master', 'development']
-                        ...
-                        for (branch in GIT_BRANCHES) {
-                            ...
-                        }
-                    </code>
-                </pre>
-                <pre data-badge="config.yml">
-                    <code class="yaml" data-trim data-noescape>
-                        git:
-                            branches:
-                            - master
-                            - development
-                    </code>
-                </pre>
-                <pre data-badge="pipeline.groovy.j2">
-                    <code class="python" data-trim data-noescape>
-                        GIT_BRANCHES = {{ git.branches <mark>| to_groovy_list</mark> }} # Custom Jinja filter...
-                    </code>
-                </pre>
-            </section>
-            <section data-transition="slide-in fade-out">
-                <p>Registering a custom Jinja filter</p>
-                <pre data-badge="render_pipeline1.py">
-                    <code class="python" data-trim data-noescape>
-                        from jinja2 import Environment
+        <!--<section>-->
+            <!--<section>-->
+                <!--<h2>Language Features</h2>-->
+            <!--</section>-->
+            <!--<section data-transition="slide-in fade-out">-->
+                <!--<p>Using Jinja templates to generate Jenkins pipelines</p>-->
+                <!--<pre data-badge="pipeline.groovy">-->
+                    <!--<code class="groovy" data-trim data-noescape>-->
+                        <!--GIT_BRANCHES = ['master', 'development']-->
+                        <!--...-->
+                        <!--for (branch in GIT_BRANCHES) {-->
+                            <!--...-->
+                        <!--}-->
+                    <!--</code>-->
+                <!--</pre>-->
+                <!--<pre data-badge="config.yml" class="fragment">-->
+                    <!--<code class="yaml" data-trim data-noescape>-->
+                        <!--git:-->
+                            <!--branches:-->
+                            <!-- - master-->
+                            <!-- - development-->
+                    <!--</code>-->
+                <!--</pre>-->
+                <!--<pre data-badge="pipeline.groovy.j2" class="fragment">-->
+                    <!--<code class="python" data-trim data-noescape>-->
+                        <!--GIT_BRANCHES = {{ git.branches }}  # Does not come out as a groovy literal...-->
+                    <!--</code>-->
+                <!--</pre>-->
+            <!--</section>-->
+            <!--<section data-transition="fade-in slide-out">-->
+                <!--<p>Using Jinja templates to generate Jenkins pipelines</p>-->
+                <!--<pre data-badge="pipeline.groovy">-->
+                    <!--<code class="groovy" data-trim data-noescape>-->
+                        <!--GIT_BRANCHES = ['master', 'development']-->
+                        <!--...-->
+                        <!--for (branch in GIT_BRANCHES) {-->
+                            <!--...-->
+                        <!--}-->
+                    <!--</code>-->
+                <!--</pre>-->
+                <!--<pre data-badge="config.yml">-->
+                    <!--<code class="yaml" data-trim data-noescape>-->
+                        <!--git:-->
+                            <!--branches:-->
+                            <!-- - master-->
+                            <!-- - development-->
+                    <!--</code>-->
+                <!--</pre>-->
+                <!--<pre data-badge="pipeline.groovy.j2">-->
+                    <!--<code class="python" data-trim data-noescape>-->
+                        <!--GIT_BRANCHES = {{ git.branches <mark>| to_groovy_list</mark> }} # Custom Jinja filter...-->
+                    <!--</code>-->
+                <!--</pre>-->
+            <!--</section>-->
+            <!--<section data-transition="slide-in fade-out">-->
+                <!--<p>Registering a custom Jinja filter</p>-->
+                <!--<pre data-badge="render_pipeline1.py">-->
+                    <!--<code class="python" data-trim data-noescape>-->
+                        <!--from jinja2 import Environment-->
 
-                        jinja_env = Environment()  # [...]
-                        jinja_env.filters['quoted'] = quoted
-                        jinja_env.filters['to_groovy_list'] = to_groovy_list
+                        <!--jinja_env = Environment()  # [...]-->
+                        <!--jinja_env.filters['quoted'] = quoted-->
+                        <!--jinja_env.filters['to_groovy_list'] = to_groovy_list-->
 
-                        def quoted(text):
-                            return "'{}'".format(text)
+                        <!--def quoted(text):-->
+                            <!--return "'{}'".format(text)-->
 
-                        def to_groovy_list(list):
-                            return '[{}]'.format(', '.join(map(quoted, list)))
-                    </code>
-                </pre>
-            </section>
-            <section data-transition="fade-in fade-out">
-                <p>Registering a custom Jinja filter</p>
-                <pre data-badge="render_pipeline1.py">
-                    <code class="python" data-trim data-noescape>
-                        from jinja2 import Environment
+                        <!--def to_groovy_list(list):-->
+                            <!--return '[{}]'.format(', '.join(map(quoted, list)))-->
+                    <!--</code>-->
+                <!--</pre>-->
+            <!--</section>-->
+            <!--<section data-transition="fade-in fade-out">-->
+                <!--<p>Registering a custom Jinja filter</p>-->
+                <!--<pre data-badge="render_pipeline1.py">-->
+                    <!--<code class="python" data-trim data-noescape>-->
+                        <!--from jinja2 import Environment-->
 
-                        jinja_env = Environment()  # [...]
-                        jinja_env.filters['quoted'] = quoted
-                        jinja_env.filters['to_groovy_list'] = to_groovy_list
+                        <!--jinja_env = Environment()  # [...]-->
+                        <!--jinja_env.filters['quoted'] = quoted-->
+                        <!--jinja_env.filters['to_groovy_list'] = to_groovy_list-->
 
-                        def quoted(text):
-                            return "'{}'".format(text)
+                        <!--def quoted(text):-->
+                            <!--return "'{}'".format(text)-->
 
-                        <mark>def to_groovy_list(list):</mark>
-                            <mark>return '[{}]'.format(', '.join(map(quoted, list)))</mark>
-                    </code>
-                </pre>
-            </section>
-            <section data-transition="fade-in slide-out">
-                <p>Registering a custom Jinja filter</p>
-                <pre data-badge="render_pipeline1.py">
-                    <code class="python" data-trim data-noescape>
-                        from jinja2 import Environment
+                        <!--<mark>def to_groovy_list(list):</mark>-->
+                            <!--<mark>return '[{}]'.format(', '.join(map(quoted, list)))</mark>-->
+                    <!--</code>-->
+                <!--</pre>-->
+            <!--</section>-->
+            <!--<section data-transition="fade-in slide-out">-->
+                <!--<p>Registering a custom Jinja filter</p>-->
+                <!--<pre data-badge="render_pipeline1.py">-->
+                    <!--<code class="python" data-trim data-noescape>-->
+                        <!--from jinja2 import Environment-->
 
-                        jinja_env = Environment()  # [...]
-                        jinja_env.filters['quoted'] = quoted
-                        <mark>jinja_env.filters['to_groovy_list'] = to_groovy_list</mark>
+                        <!--jinja_env = Environment()  # [...]-->
+                        <!--jinja_env.filters['quoted'] = quoted-->
+                        <!--<mark>jinja_env.filters['to_groovy_list'] = to_groovy_list</mark>-->
 
-                        def quoted(text):
-                            return "'{}'".format(text)
+                        <!--def quoted(text):-->
+                            <!--return "'{}'".format(text)-->
 
-                        def to_groovy_list(list):
-                            return '[{}]'.format(', '.join(map(quoted, list)))
-                    </code>
-                </pre>
-            </section>
-            <section data-transition="slide-in fade-out">
-                <p>The same, using a decorator</p>
-                <pre data-badge="render_pipeline2.py">
-                    <code class="python" data-trim data-noescape>
-                        jinja_env = Environment()  # [...]
+                        <!--def to_groovy_list(list):-->
+                            <!--return '[{}]'.format(', '.join(map(quoted, list)))-->
+                    <!--</code>-->
+                <!--</pre>-->
+            <!--</section>-->
+            <!--<section data-transition="slide-in fade-out">-->
+                <!--<p>The same, using a decorator</p>-->
+                <!--<pre data-badge="render_pipeline2.py">-->
+                    <!--<code class="python" data-trim data-noescape>-->
+                        <!--jinja_env = Environment()  # [...]-->
 
-                        def custom_filter(func):
-                            jinja_env.filters[func.__name__] = func
+                        <!--def custom_filter(func):-->
+                            <!--jinja_env.filters[func.__name__] = func-->
 
-                        @custom_filter
-                        def quoted(text):
-                            return "'{}'".format(text)
+                        <!--@custom_filter-->
+                        <!--def quoted(text):-->
+                            <!--return "'{}'".format(text)-->
 
-                        @custom_filter
-                        def to_groovy_list(list):
-                            return '[{}]'.format(', '.join(map(quoted, list)))
-                    </code>
-                </pre>
-            </section>
-            <section data-transition="fade-in slide-out">
-                <p>The same, using a decorator</p>
-                <pre data-badge="render_pipeline2.py">
-                    <code class="python" data-trim data-noescape>
-                        jinja_env = Environment()  # [...]
+                        <!--@custom_filter-->
+                        <!--def to_groovy_list(list):-->
+                            <!--return '[{}]'.format(', '.join(map(quoted, list)))-->
+                    <!--</code>-->
+                <!--</pre>-->
+            <!--</section>-->
+            <!--<section data-transition="fade-in slide-out">-->
+                <!--<p>The same, using a decorator</p>-->
+                <!--<pre data-badge="render_pipeline2.py">-->
+                    <!--<code class="python" data-trim data-noescape>-->
+                        <!--jinja_env = Environment()  # [...]-->
 
-                        <mark>def custom_filter(func):</mark>
-                            jinja_env.filters[func.__name__] = func
+                        <!--<mark>def custom_filter(func):</mark>-->
+                            <!--jinja_env.filters[func.__name__] = func-->
 
-                        <mark>@custom_filter</mark>
-                        def quoted(text):
-                            return "'{}'".format(text)
+                        <!--<mark>@custom_filter</mark>-->
+                        <!--def quoted(text):-->
+                            <!--return "'{}'".format(text)-->
 
-                        <mark>@custom_filter</mark>
-                        def to_groovy_list(list):
-                            return '[{}]'.format(', '.join(map(quoted, list)))
-                    </code>
-                </pre>
-            </section>
-            <section>
-                <p>Implementing a CLI tool</p>
-                <pre data-badge="deploy.sh">
-                    <code class="plaintext" data-trim data-noescape>
-                        query-nexus.py \
-                        --nexus-url 'https://nexus.local' \
-                        --repo 'maven-releases' \
-                        --group 'com.company.ms' \
-                        --artifact 'my-api' \
-                        --version '1.0.8'
-                    </code>
-                </pre>
-            </section>
-            <section>
-                <p>Using argparse</p>
-                <pre data-badge="query-nexus1.py">
-                    <code class="python" data-trim data-noescape>
-                        parser = argparse.ArgumentParser('Get Swagger URL')
-                        parser.add_argument('--nexus-url', nargs='?', default='…', help='…')
-                        parser.add_argument('--repo', nargs='?', default='…', help='…')
-                        parser.add_argument('--group', nargs='?', default='…', help='…')
-                        parser.add_argument('--artifact', nargs='?', help='…')
-                        parser.add_argument('--version', nargs='?', help='…')
-                        parser.add_argument('--debug', action='store_true')
-                        args = parser.parse_args()
-                    </code>
-                </pre>
-            </section>
-            <section>
-                <p>Using the Click framework</p>
-                <pre data-badge="query-nexus2.py">
-                    <code class="python" data-trim data-noescape>
-                        @click_command
-                        @click.option('--nexus-url', '-n', default='…', help='…')
-                        @click.option('--repo', '-r', default='…', help='…')
-                        @click.option('--group', '-g', default='…', help='…')
-                        @click.option('--artifact', '-a', default='…', help='…')
-                        @click.option('--version', '-v', default='…', help='…')
-                        @click.option('--debug', '-d', default='…', help='…')
-                        def retrieve_swagger_url(nexus_url, repo, group, artefact, version, debug):
-                            pass
-                    </code>
-                </pre>
-            </section>
-            <section data-background="#f7f2d3">
-                <h2>Tip #6</h2>
-                <p>Look around.</p>
-            </section>
-        </section>
+                        <!--<mark>@custom_filter</mark>-->
+                        <!--def to_groovy_list(list):-->
+                            <!--return '[{}]'.format(', '.join(map(quoted, list)))-->
+                    <!--</code>-->
+                <!--</pre>-->
+            <!--</section>-->
+            <!--<section>-->
+                <!--<p>Implementing a CLI tool</p>-->
+                <!--<pre data-badge="deploy.sh">-->
+                    <!--<code class="plaintext" data-trim data-noescape>-->
+                        <!--query-nexus.py \-->
+                        <!--&#45;&#45;nexus-url 'https://nexus.local' \-->
+                        <!--&#45;&#45;repo 'maven-releases' \-->
+                        <!--&#45;&#45;group 'com.company.ms' \-->
+                        <!--&#45;&#45;artifact 'my-api' \-->
+                        <!--&#45;&#45;version '1.0.8'-->
+                    <!--</code>-->
+                <!--</pre>-->
+            <!--</section>-->
+            <!--<section>-->
+                <!--<p>Using argparse</p>-->
+                <!--<pre data-badge="query-nexus1.py">-->
+                    <!--<code class="python" data-trim data-noescape>-->
+                        <!--parser = argparse.ArgumentParser('Get Swagger URL')-->
+                        <!--parser.add_argument('&#45;&#45;nexus-url', nargs='?', default='…', help='…')-->
+                        <!--parser.add_argument('&#45;&#45;repo', nargs='?', default='…', help='…')-->
+                        <!--parser.add_argument('&#45;&#45;group', nargs='?', default='…', help='…')-->
+                        <!--parser.add_argument('&#45;&#45;artifact', nargs='?', help='…')-->
+                        <!--parser.add_argument('&#45;&#45;version', nargs='?', help='…')-->
+                        <!--parser.add_argument('&#45;&#45;debug', action='store_true')-->
+                        <!--args = parser.parse_args()-->
+                    <!--</code>-->
+                <!--</pre>-->
+            <!--</section>-->
+            <!--<section>-->
+                <!--<p>Using the Click framework</p>-->
+                <!--<pre data-badge="query-nexus2.py">-->
+                    <!--<code class="python" data-trim data-noescape>-->
+                        <!--@click_command-->
+                        <!--@click.option('&#45;&#45;nexus-url', '-n', default='…', help='…')-->
+                        <!--@click.option('&#45;&#45;repo', '-r', default='…', help='…')-->
+                        <!--@click.option('&#45;&#45;group', '-g', default='…', help='…')-->
+                        <!--@click.option('&#45;&#45;artifact', '-a', default='…', help='…')-->
+                        <!--@click.option('&#45;&#45;version', '-v', default='…', help='…')-->
+                        <!--@click.option('&#45;&#45;debug', '-d', default='…', help='…')-->
+                        <!--def retrieve_swagger_url(nexus_url, repo, group, artefact, version, debug):-->
+                            <!--pass-->
+                    <!--</code>-->
+                <!--</pre>-->
+            <!--</section>-->
+            <!--<section data-background="#f7f2d3">-->
+                <!--<h2>Tip #6</h2>-->
+                <!--<p>Look around.</p>-->
+            <!--</section>-->
+        <!--</section>-->
 
         <!-- Outro -->
         <section>
